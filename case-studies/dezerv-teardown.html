@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dezerv Teardown — Brijesh Bolar</title>
+  <meta name="description" content="Dezerv Product Teardown — analysing India's trust-first, conflict-free wealth management platform and its AI strategy.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body class="cs-page">
+
+  <!-- ── Navigation ──────────────────────────────────────── -->
+  <nav class="site-nav scrolled" id="site-nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">BB</a>
+      <button class="nav-burger" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu" role="list">
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+        <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+        <li><a href="../index.html#work" class="nav-link">Work</a></li>
+        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        <li>
+          <a href="../documents/Resume_BrijeshBolar_SPM.pdf" target="_blank" rel="noopener noreferrer"
+             class="btn btn-outline btn-sm nav-resume-btn">↓ Resume</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Hero ─────────────────────────────────────────────── -->
+  <section class="cs-hero">
+    <div class="container">
+      <a href="../index.html#work" class="cs-hero__back">← Back to Portfolio</a>
+
+      <div class="cs-hero__meta">
+        <span class="tag">Wealth Management</span>
+        <span class="tag">AI Strategy</span>
+        <span class="tag">Business Model</span>
+        <span class="badge badge--blue">Case Study + PDF</span>
+      </div>
+
+      <h1 class="cs-hero__title">Dezerv: Trust-First Wealth Platform</h1>
+      <p class="cs-hero__lead">
+        A deep-dive into India's only digitally-native, conflict-free wealth manager — analysing how Dezerv turned the trust gap in wealth management into a defensible moat, and where AI fits into their next phase of scale.
+      </p>
+
+      <div class="cs-hero__metrics">
+        <div class="cs-metric-chip">
+          <span class="cs-metric-chip__num">11×</span>
+          <span class="cs-metric-chip__label">AUM in 39 months</span>
+        </div>
+        <div class="cs-metric-chip">
+          <span class="cs-metric-chip__num">₹17,000 Cr</span>
+          <span class="cs-metric-chip__label">AUM as of Mar 2026</span>
+        </div>
+        <div class="cs-metric-chip">
+          <span class="cs-metric-chip__num">Zero</span>
+          <span class="cs-metric-chip__label">SEBI complaints</span>
+        </div>
+        <div class="cs-metric-chip">
+          <span class="cs-metric-chip__num">4×</span>
+          <span class="cs-metric-chip__label">YoY revenue growth (FY25)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Problem Framing ────────────────────────────────────── -->
+  <section class="cs-section">
+    <div class="container">
+      <span class="cs-section__label">Problem Framing</span>
+      <h2 class="cs-section__title">The Trust Gap in Wealth Management</h2>
+
+      <div class="two-col">
+        <div>
+          <p class="cs-section__body">
+            India's wealth management industry is structurally broken — not because of a product gap, but a trust gap. Traditional relationship managers earn trail commissions on product placement, not client outcomes. Portfolios are accidental collections of overlapping funds, generating ₹1–2 lakh per year in hidden commissions on a ₹1 crore portfolio.
+          </p>
+          <p class="cs-section__body mt-4">
+            The supply-side crisis compounds this: there are roughly 1,000 wealthy families per qualified RM in India. High-quality, conflict-free advice doesn't scale with humans alone.
+          </p>
+          <p class="cs-section__body mt-4">
+            Dezerv's insight: make mis-selling <em>visible</em> before the commercial conversation begins — and then solve it structurally through a discretionary mandate and fixed-fee model.
+          </p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div class="card" style="padding: 20px 24px;">
+            <div style="font-size: 0.72rem; color: var(--color-accent-gold); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px;">The Status Quo Problem</div>
+            <ul class="cs-list">
+              <li>Hidden trail commissions of ₹1–2L/yr on ₹1 Cr portfolios</li>
+              <li>Portfolios with 30+ overlapping funds — accidental, not intentional</li>
+              <li>RM incentive: maximize AUM, not client returns</li>
+              <li>No accountability — RMs change, portfolios don't</li>
+              <li>Geography gap: quality advice concentrated in Tier 1 cities</li>
+            </ul>
+          </div>
+
+          <div class="card" style="padding: 20px 24px; border-color: rgba(201,168,76,0.3);">
+            <div style="font-size: 0.72rem; color: var(--color-accent-gold); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px;">Dezerv's Structural Fix</div>
+            <ul class="cs-list">
+              <li>Direct-to-client model — no broker intermediaries</li>
+              <li>Discretionary mandate: Dezerv owns outcomes, not just advice</li>
+              <li>Fixed fee: 1% flat or 10% performance above high-watermark</li>
+              <li>Earn only when clients earn</li>
+              <li>Dual-app funnel converts trust at scale</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Product Analysis ───────────────────────────────────── -->
+  <section class="cs-section cs-section--alt">
+    <div class="container">
+      <span class="cs-section__label">Product Architecture</span>
+      <h2 class="cs-section__title">How the Platform Works</h2>
+
+      <div class="grid-3">
+        <div class="card card-insight animate-in">
+          <div class="card-insight__icon">📱</div>
+          <div class="card-insight__title">Dual-App Funnel</div>
+          <div class="card-insight__body">
+            <strong style="color: var(--color-text-primary);">Wealth Monitor</strong> (free, 700K users, ₹2.5L Cr tracked) makes mis-selling visible — users see their hidden commissions and portfolio overlaps. This qualifies leads organically.<br><br>
+            <strong style="color: var(--color-text-primary);">Dezerv App</strong> (KYC-gated, 6,568 PMS clients, ₹17,000 Cr AUM) converts them into managed clients with discretionary mandates.
+          </div>
+        </div>
+
+        <div class="card card-insight animate-in">
+          <div class="card-insight__icon">📊</div>
+          <div class="card-insight__title">Conflict-Free Product Stack</div>
+          <div class="card-insight__body">
+            Three tiers by client size:<br><br>
+            <strong style="color: var(--color-text-primary);">IPA</strong> — ₹50K minimum, trail commission model for mass affluent<br><br>
+            <strong style="color: var(--color-text-primary);">PMS</strong> — ₹50L minimum, 1% or 10% performance fee<br><br>
+            <strong style="color: var(--color-text-primary);">AIF Cat I/II/III</strong> — ₹1 Cr+, management fee + carry for UHNI
+          </div>
+        </div>
+
+        <div class="card card-insight animate-in">
+          <div class="card-insight__icon">🤖</div>
+          <div class="card-insight__title">AI Strategy (3 Layers)</div>
+          <div class="card-insight__body">
+            <strong style="color: var(--color-text-primary);">Now:</strong> Internal tools reducing non-client-facing RM activity to near zero — same headcount, dramatically more clients served.<br><br>
+            <strong style="color: var(--color-text-primary);">Near-term:</strong> Voice agent for client check-ins and portfolio queries.<br><br>
+            <strong style="color: var(--color-text-primary);">2026+:</strong> Agentic systems for portfolio rebalancing and tax optimisation at scale.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Key Insights ───────────────────────────────────────── -->
+  <section class="cs-section">
+    <div class="container">
+      <span class="cs-section__label">Strategic Insights</span>
+      <h2 class="cs-section__title">What Makes This Model Work</h2>
+
+      <div class="decisions-grid">
+        <div class="card card-insight animate-in">
+          <div class="card-insight__icon">🛡️</div>
+          <div class="card-insight__title">Trust as a Product Feature</div>
+          <div class="card-insight__body">Dezerv doesn't market trust — they engineer it. The conflict-free fee structure, discretionary mandate, and SEBI-filed performance records make trust verifiable, not a promise. Zero SEBI complaints across 6,568 PMS clients is the product working as designed.</div>
+        </div>
+
+        <div class="card card-insight animate-in">
+          <div class="card-insight__icon">🔄</div>
+          <div class="card-insight__title">Flywheel: Performance → Referrals → AUM</div>
+          <div class="card-insight__body">Every equity strategy beats its benchmark (Alpha Focus: +3.68% alpha, SEBI-filed). Clients who stay 12 months add 40–50% more capital in Year 2 and refer peers — a compounding growth flywheel that reduces CAC over time as AUM scales.</div>
+        </div>
+
+        <div class="card card-insight animate-in">
+          <div class="card-insight__icon">📍</div>
+          <div class="card-insight__title">Unoccupied Market Quadrant</div>
+          <div class="card-insight__body">Dezerv occupies a quadrant no one else holds: institutional-grade + digitally-native + conflict-free. Traditional PMS providers lack digital distribution. Robo-advisors lack human touch and discretionary depth. This positioning is structurally hard to replicate.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Business Outcomes ──────────────────────────────────── -->
+  <section class="cs-section cs-section--alt">
+    <div class="container">
+      <span class="cs-section__label">Business Outcomes</span>
+      <h2 class="cs-section__title">The Numbers Tell the Story</h2>
+
+      <div class="impact-box animate-in">
+        <div class="impact-box__title">Key performance indicators — as of March 2026</div>
+        <div class="impact-box__numbers">
+          <div class="impact-number">
+            <div class="impact-number__val">₹17,000 Cr</div>
+            <div class="impact-number__label">AUM (from ₹1,500 Cr in Dec '22)</div>
+          </div>
+          <div class="impact-number">
+            <div class="impact-number__val">11×</div>
+            <div class="impact-number__label">AUM growth in 39 months</div>
+          </div>
+          <div class="impact-number">
+            <div class="impact-number__val">₹66 Cr</div>
+            <div class="impact-number__label">FY25 revenue (4× YoY)</div>
+          </div>
+          <div class="impact-number">
+            <div class="impact-number__val">0</div>
+            <div class="impact-number__label">SEBI complaints across 6,568 PMS clients</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-3 mt-8">
+        <div class="card card-metric animate-in">
+          <div class="card-metric__number">+3.68%</div>
+          <div class="card-metric__label">Alpha Focus strategy alpha (SEBI-filed)</div>
+        </div>
+        <div class="card card-metric animate-in">
+          <div class="card-metric__number">12.2%</div>
+          <div class="card-metric__label">Dynamic Debt Plus returns vs 3.82% benchmark</div>
+        </div>
+        <div class="card card-metric animate-in">
+          <div class="card-metric__number">40–50%</div>
+          <div class="card-metric__label">Additional capital added by clients in Year 2</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PDF Download ───────────────────────────────────────── -->
+  <section class="cs-section">
+    <div class="container">
+      <div class="pdf-download-block animate-in">
+        <div class="pdf-download-block__icon">📄</div>
+        <div class="pdf-download-block__text">
+          <div class="pdf-download-block__title">Full Product Teardown</div>
+          <div class="pdf-download-block__desc">Nine-act analysis covering opportunity sizing, founding story, trust gap diagnosis, dual-app architecture, business model, SEBI-filed performance, GTM strategy, AI roadmap, and strategic verdict.</div>
+        </div>
+        <a href="../documents/Dezerv_Product_Teardown_Brijesh_Harish_Bolar.pdf"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn-gold">↓ View PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__copy">© 2026 Brijesh Bolar · Senior Product Leader</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/brijeshbolar-productleader/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+        <a href="mailto:bolar.brijesh@gmail.com" class="footer-link">Email</a>
+        <a href="../index.html#work" class="footer-link">← All Projects</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upstox Teardown — Brijesh Bolar</title>
+  <meta name="description" content="Upstox Product Teardown — diagnosing why 40-60% of 13M+ users never place a trade and building an activation strategy.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body class="cs-page">
+
+  <!-- ── Navigation ──────────────────────────────────────── -->
+  <nav class="site-nav scrolled" id="site-nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">BB</a>
+      <button class="nav-burger" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu" role="list">
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+        <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+        <li><a href="../index.html#work" class="nav-link">Work</a></li>
+        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        <li>
+          <a href="../documents/Resume_BrijeshBolar_SPM.pdf" target="_blank" rel="noopener noreferrer"
+             class="btn btn-outline btn-sm nav-resume-btn">↓ Resume</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Hero ─────────────────────────────────────────────── -->
+  <section class="cs-hero">
+    <div class="container">
+      <a href="../index.html#work" class="cs-hero__back">← Back to Portfolio</a>
+
+      <div class="cs-hero__meta">
+        <span class="tag">Brokerage</span>
+        <span class="tag">Growth</span>
+        <span class="tag">Activation Strategy</span>
+        <span class="badge badge--blue">Case Study + PDF</span>
+      </div>
+
+      <h1 class="cs-hero__title">Upstox: Investor Activation Strategy</h1>
+      <p class="cs-hero__lead">
+        A deep product teardown diagnosing why 40–60% of Upstox's 13M+ registered users never place a single trade — and a structured activation strategy to convert dormant accounts into long-term investors at zero additional CAC.
+      </p>
+
+      <div class="cs-hero__metrics">
+        <div class="cs-metric-chip">
+          <span class="cs-metric-chip__num">2.6M</span>
+          <span class="cs-metric-chip__label">Additional active investors</span>
+        </div>
+        <div class="cs-metric-chip">
+          <span class="cs-metric-chip__num">₹260 Cr</span>
+          <span class="cs-metric-chip__label">Incremental year-one revenue</span>
+        </div>
+        <div class="cs-metric-chip">
+          <span class="cs-metric-chip__num">Zero</span>
+          <span class="cs-metric-chip__label">Additional CAC required</span>
+        </div>
+        <div class="cs-metric-chip">
+          <span class="cs-metric-chip__num">10×</span>
+          <span class="cs-metric-chip__label">ARPU from 12-month investors</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Context ───────────────────────────────────────────── -->
+  <section class="cs-section">
+    <div class="container">
+      <span class="cs-section__label">Context</span>
+      <h2 class="cs-section__title">The Activation Gap</h2>
+
+      <div class="two-col">
+        <div>
+          <p class="cs-section__body">
+            40–60% of Upstox's 13 million registered accounts have never placed a single trade. That's not a user acquisition problem. That's a product problem — and it's already been paid for.
+          </p>
+          <p class="cs-section__body mt-4">
+            Every dormant account represents a user Upstox spent money to acquire, who completed KYC, waited 48 hours for activation, opened the app — and then did nothing. Not because they didn't want to invest. Because the product gave them nowhere to start.
+          </p>
+          <p class="cs-section__body mt-4">
+            The teardown maps this gap across three critical failure points — each one fixable, none requiring new product capabilities.
+          </p>
+        </div>
+        <div>
+          <div class="cs-callout">
+            <p>"The strategic pivot isn't 'reduce cost → increase access → monetize volume.' It's 'reduce confusion → increase confidence → monetize longevity.' The product isn't broken — the activation model is."</p>
+          </div>
+
+          <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 12px;">
+            <div class="card" style="padding: 16px 20px;">
+              <div style="font-size: 0.72rem; color: var(--color-accent-gold); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">Target Persona</div>
+              <div style="font-weight: 700; color: var(--color-text-primary);">Aakash</div>
+              <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 4px;">First-time investor, 22–30, earns ₹4–12L/yr, has savings but no investment habit. Opened Upstox after seeing an ad. Never placed a trade.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Analysis Framework ────────────────────────────────── -->
+  <section class="cs-section cs-section--alt">
+    <div class="container">
+      <span class="cs-section__label">Methodology</span>
+      <h2 class="cs-section__title">Product Analysis Framework</h2>
+
+      <div class="grid-3">
+        <div class="card card-insight animate-in">
+          <div class="card-insight__icon">🗺️</div>
+          <div class="card-insight__title">User Journey Mapping</div>
+          <div class="card-insight__body">End-to-end journey from trigger (ad/referral) → discovery → KYC → activation → first trade → habit formation → market shock response. Each transition point was stress-tested for drop-off causes.</div>
+        </div>
+        <div class="card card-insight animate-in">
+          <div class="card-insight__icon">📐</div>
+          <div class="card-insight__title">RICE Prioritization</div>
+          <div class="card-insight__body">Every identified problem was scored on Reach, Impact, Confidence, and Effort to generate a ranked backlog. This eliminated intuition bias and surfaced the highest-leverage, lowest-effort fixes first.</div>
+        </div>
+        <div class="card card-insight animate-in">
+          <div class="card-insight__icon">🔍</div>
+          <div class="card-insight__title">Competitive Benchmarking</div>
+          <div class="card-insight__body">Compared Upstox's onboarding flow against Zerodha, Groww, and Angel One — identifying where Upstox defaults to a professional trader UI for an audience of first-time investors.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Three Priority Initiatives ────────────────────────── -->
+  <section class="cs-section">
+    <div class="container">
+      <span class="cs-section__label">Prioritized Backlog</span>
+      <h2 class="cs-section__title">Top 3 Initiatives by RICE Score</h2>
+      <p class="cs-section__body mb-8">Combined RICE impact of 16,000+ units across all three priorities. Estimated delivery: 3.5 engineer-weeks.</p>
+
+      <div class="grid-3">
+        <!-- Priority 1 -->
+        <div class="priority-card animate-in">
+          <div class="priority-card__rank">Priority 1 · Highest RICE</div>
+          <div class="priority-card__title">Aadhaar Name Mismatch — Silent Failure</div>
+          <div class="priority-card__problem">Users who fail KYC due to a name mismatch between Aadhaar and PAN receive no clear error — they simply cannot proceed, with no guidance on resolution. Affects a significant portion of new signups silently.</div>
+          <div class="rice-grid">
+            <div class="rice-item"><div class="rice-item__label">Reach</div><div class="rice-item__value">High</div></div>
+            <div class="rice-item"><div class="rice-item__label">Impact</div><div class="rice-item__value">Critical</div></div>
+            <div class="rice-item"><div class="rice-item__label">Confidence</div><div class="rice-item__value">90%</div></div>
+            <div class="rice-item"><div class="rice-item__label">Effort</div><div class="rice-item__value">0.5 wk</div></div>
+          </div>
+          <div class="priority-card__outcome mt-4">→ Inline error messaging + guided resolution flow</div>
+        </div>
+
+        <!-- Priority 2 -->
+        <div class="priority-card animate-in">
+          <div class="priority-card__rank">Priority 2 · High RICE</div>
+          <div class="priority-card__title">Silent 24–48hr Activation Void</div>
+          <div class="priority-card__problem">After KYC submission, users enter a 24–48hr activation window with no communication, no progress updates, no expectation setting. Intent decays. Many never return after account activation.</div>
+          <div class="rice-grid">
+            <div class="rice-item"><div class="rice-item__label">Reach</div><div class="rice-item__value">100%</div></div>
+            <div class="rice-item"><div class="rice-item__label">Impact</div><div class="rice-item__value">High</div></div>
+            <div class="rice-item"><div class="rice-item__label">Confidence</div><div class="rice-item__value">85%</div></div>
+            <div class="rice-item"><div class="rice-item__label">Effort</div><div class="rice-item__value">1 wk</div></div>
+          </div>
+          <div class="priority-card__outcome mt-4">→ 4-email activation drip with milestone updates</div>
+        </div>
+
+        <!-- Priority 3 -->
+        <div class="priority-card animate-in">
+          <div class="priority-card__rank">Priority 3 · Quick Win</div>
+          <div class="priority-card__title">Default to Investor Mode for New Accounts</div>
+          <div class="priority-card__problem">New users land on the professional trader dashboard — live charts, option chains, F&O buttons. This is designed for "Dev" (the power trader), not "Aakash" (the first-time investor). Cognitive overload kills confidence.</div>
+          <div class="rice-grid">
+            <div class="rice-item"><div class="rice-item__label">Reach</div><div class="rice-item__value">100%</div></div>
+            <div class="rice-item"><div class="rice-item__label">Impact</div><div class="rice-item__value">High</div></div>
+            <div class="rice-item"><div class="rice-item__label">Confidence</div><div class="rice-item__value">80%</div></div>
+            <div class="rice-item"><div class="rice-item__label">Effort</div><div class="rice-item__value">2 wk</div></div>
+          </div>
+          <div class="priority-card__outcome mt-4">→ Simplified investor mode as default for new accounts</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Impact Projection ──────────────────────────────────── -->
+  <section class="cs-section cs-section--alt">
+    <div class="container">
+      <span class="cs-section__label">Revenue Impact</span>
+      <h2 class="cs-section__title">What Activation Unlocks</h2>
+
+      <div class="impact-box animate-in">
+        <div class="impact-box__title">Projected impact of improving activation rate from 40% → 60%</div>
+        <div class="impact-box__numbers">
+          <div class="impact-number">
+            <div class="impact-number__val">2.6M</div>
+            <div class="impact-number__label">Additional active investors</div>
+          </div>
+          <div class="impact-number">
+            <div class="impact-number__val">₹260 Cr</div>
+            <div class="impact-number__label">Incremental year-one revenue</div>
+          </div>
+          <div class="impact-number">
+            <div class="impact-number__val">10×</div>
+            <div class="impact-number__label">ARPU: 12-month vs one-time traders</div>
+          </div>
+          <div class="impact-number">
+            <div class="impact-number__val">Zero</div>
+            <div class="impact-number__label">Additional CAC required</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PDF Download ───────────────────────────────────────── -->
+  <section class="cs-section">
+    <div class="container">
+      <div class="pdf-download-block animate-in">
+        <div class="pdf-download-block__icon">📄</div>
+        <div class="pdf-download-block__text">
+          <div class="pdf-download-block__title">Full Product Teardown</div>
+          <div class="pdf-download-block__desc">Complete analysis including user journey maps, RICE-scored backlog, MVP sprint plan, GTM strategy, and measurement framework.</div>
+        </div>
+        <a href="../documents/Upstox_Product_Teardown_Brijesh_Bolar.pdf"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn-gold">↓ View PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__copy">© 2026 Brijesh Bolar · Senior Product Leader</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/brijeshbolar-productleader/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+        <a href="mailto:bolar.brijesh@gmail.com" class="footer-link">Email</a>
+        <a href="../index.html#work" class="footer-link">← All Projects</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

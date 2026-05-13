@@ -526,3 +526,363 @@
   color: var(--color-text-muted);
   line-height: 1.65;
 }
+
+/* ============================================================
+   SIDEBAR LAYOUT — MDM Platform editorial redesign
+   All classes namespaced to .cs-with-sidebar / .cs-sidebar /
+   .cs-main-content — zero impact on upstox / dezerv pages
+   ============================================================ */
+
+/* ── Two-column shell ─────────────────────────────────────── */
+.cs-with-sidebar {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 0;
+}
+
+@media (min-width: 1024px) {
+  .cs-with-sidebar {
+    padding: 0 48px;
+    gap: 56px;
+  }
+}
+
+/* ── Sidebar column ───────────────────────────────────────── */
+.cs-sidebar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .cs-sidebar {
+    display: block;
+    flex-shrink: 0;
+    width: 200px;
+    position: sticky;
+    top: calc(var(--nav-height) + 24px);
+    max-height: calc(100vh - var(--nav-height) - 48px);
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding: 48px 0 48px;
+    align-self: flex-start;
+  }
+  .cs-sidebar::-webkit-scrollbar { display: none; }
+}
+
+.cs-sidebar__title {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+  padding-left: 14px;
+}
+
+.cs-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.cs-sidebar__link {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 7px 14px;
+  border-left: 2px solid transparent;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  line-height: 1.35;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.cs-sidebar__link:hover {
+  color: var(--color-text-secondary);
+  border-left-color: rgba(201, 168, 76, 0.35);
+  background: rgba(255,255,255,0.03);
+}
+
+.cs-sidebar__link.active {
+  color: var(--color-accent-gold);
+  border-left-color: var(--color-accent-gold);
+  background: rgba(201, 168, 76, 0.07);
+  font-weight: 600;
+}
+
+.cs-sidebar__num {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  opacity: 0.55;
+  flex-shrink: 0;
+  min-width: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+.cs-sidebar__link.active .cs-sidebar__num {
+  color: var(--color-accent-gold);
+  opacity: 0.75;
+}
+
+/* ── Main content column ──────────────────────────────────── */
+.cs-main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Remove container padding inside main content — cs-with-sidebar handles centering */
+.cs-main-content .cs-section .container,
+.cs-main-content .cs-section--alt .container {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+}
+
+/* ── Mobile jump-to dropdown ──────────────────────────────── */
+.cs-mobile-toc {
+  display: block;
+  padding: 12px 24px;
+  background: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+@media (min-width: 1024px) {
+  .cs-mobile-toc { display: none; }
+}
+
+.cs-mobile-toc__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 16px;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.cs-mobile-toc__toggle:hover {
+  border-color: rgba(201, 168, 76, 0.4);
+}
+
+.cs-mobile-toc__toggle-icon {
+  font-size: 0.65rem;
+  transition: transform var(--transition-fast);
+}
+
+.cs-mobile-toc.open .cs-mobile-toc__toggle-icon {
+  transform: rotate(180deg);
+}
+
+.cs-mobile-toc__menu {
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 8px;
+}
+
+.cs-mobile-toc.open .cs-mobile-toc__menu {
+  display: flex;
+}
+
+.cs-mobile-toc__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.cs-mobile-toc__link:hover {
+  color: var(--color-accent-gold);
+  background: rgba(201, 168, 76, 0.06);
+}
+
+.cs-mobile-toc__link span {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  opacity: 0.6;
+  min-width: 18px;
+}
+
+/* ── Section number ghost label ───────────────────────────── */
+.cs-section-num {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: rgba(201, 168, 76, 0.1);
+  line-height: 1;
+  margin-bottom: -6px;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ── Read time pill ───────────────────────────────────────── */
+.cs-read-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  padding: 3px 10px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-full);
+  background: rgba(255,255,255,0.03);
+}
+
+/* ── Introduction 3-col grid ──────────────────────────────── */
+.cs-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+@media (min-width: 640px) {
+  .cs-intro-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.cs-intro-card {
+  padding: 24px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.cs-intro-card__label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+  margin-bottom: 10px;
+}
+
+.cs-intro-card__value {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+}
+
+.cs-intro-card__value strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+/* ── Core Modules grid ────────────────────────────────────── */
+.cs-modules-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+@media (min-width: 640px) {
+  .cs-modules-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .cs-modules-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.cs-module-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 20px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast);
+}
+
+.cs-module-card:hover {
+  border-color: rgba(201, 168, 76, 0.3);
+}
+
+.cs-module-card__num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-accent-gold);
+  opacity: 0.7;
+  flex-shrink: 0;
+  padding-top: 2px;
+  min-width: 20px;
+  font-variant-numeric: tabular-nums;
+}
+
+.cs-module-card__title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.cs-module-card__desc {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+/* ── Featured screenshot ──────────────────────────────────── */
+.cs-featured-screenshot {
+  margin-top: 40px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-secondary);
+}
+
+.cs-featured-screenshot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cs-featured-screenshot__caption {
+  padding: 12px 20px;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border-subtle);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Conclusion CTA row ───────────────────────────────────── */
+.cs-conclusion-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+@media (min-width: 640px) {
+  .cs-conclusion-ctas {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.cs-conclusion-ctas .pdf-download-block {
+  flex: 1;
+  min-width: 260px;
+}

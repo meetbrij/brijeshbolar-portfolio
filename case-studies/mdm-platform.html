@@ -46,6 +46,7 @@
         <span class="tag">Enterprise Data</span>
         <span class="tag">AI Workflow</span>
         <span class="badge badge--green">Working Prototype</span>
+        <span class="cs-read-time">📖 12 min read</span>
       </div>
 
       <h1 class="cs-hero__title">Market Instrument Mastering Platform</h1>
@@ -74,205 +75,440 @@
     </div>
   </section>
 
-  <!-- ── Overview ──────────────────────────────────────────── -->
-  <section class="cs-section">
-    <div class="container">
-      <span class="cs-section__label">Overview</span>
-      <h2 class="cs-section__title">The Problem &amp; The Solution</h2>
+  <!-- ── Mobile Jump-to TOC ────────────────────────────────── -->
+  <div class="cs-mobile-toc" id="cs-mobile-toc">
+    <button class="cs-mobile-toc__toggle" id="cs-mobile-toc-toggle" aria-expanded="false">
+      Jump to section <span class="cs-mobile-toc__toggle-icon">▼</span>
+    </button>
+    <nav class="cs-mobile-toc__menu" aria-label="Page sections">
+      <a class="cs-mobile-toc__link" href="#introduction"><span>01</span> Introduction</a>
+      <a class="cs-mobile-toc__link" href="#problem-statement"><span>02</span> Problem Statement</a>
+      <a class="cs-mobile-toc__link" href="#product-strategy"><span>03</span> Product Strategy</a>
+      <a class="cs-mobile-toc__link" href="#solution"><span>04</span> Solution &amp; Architecture</a>
+      <a class="cs-mobile-toc__link" href="#core-modules"><span>05</span> Core Modules</a>
+      <a class="cs-mobile-toc__link" href="#development"><span>06</span> Development</a>
+      <a class="cs-mobile-toc__link" href="#key-metrics"><span>07</span> Key Metrics</a>
+      <a class="cs-mobile-toc__link" href="#impact"><span>08</span> Impact</a>
+      <a class="cs-mobile-toc__link" href="#conclusion"><span>09</span> Conclusion</a>
+    </nav>
+  </div>
 
-      <div class="cs-overview">
-        <div class="cs-overview__block">
-          <div class="cs-overview__block-label">Problem</div>
-          <div class="cs-overview__block-title">A 30–40% STP Failure Rate</div>
-          <div class="cs-overview__block-body">
-            <ul>
-              <li>30–40% of new financial instruments failed Straight-Through Processing on the first attempt</li>
-              <li>5+ data sources reconciled manually per instrument — Bloomberg, Reuters, internal databases</li>
-              <li>No standardized review interface for risk reviewers</li>
-              <li>Zero end-to-end audit trail — creating compliance exposure and trade booking delays</li>
-              <li>Dual personas (DataOps Analyst and Risk Reviewer) working in silos with no shared workflow</li>
-            </ul>
+  <!-- ── Two-column shell ──────────────────────────────────── -->
+  <div class="cs-with-sidebar">
+
+    <!-- ── Sticky Sidebar TOC ──────────────────────────────── -->
+    <aside class="cs-sidebar" aria-label="Page table of contents">
+      <p class="cs-sidebar__title">Contents</p>
+      <nav class="cs-sidebar__nav" aria-label="Case study sections">
+        <a class="cs-sidebar__link active" href="#introduction">
+          <span class="cs-sidebar__num">01</span> Introduction
+        </a>
+        <a class="cs-sidebar__link" href="#problem-statement">
+          <span class="cs-sidebar__num">02</span> Problem Statement
+        </a>
+        <a class="cs-sidebar__link" href="#product-strategy">
+          <span class="cs-sidebar__num">03</span> Product Strategy
+        </a>
+        <a class="cs-sidebar__link" href="#solution">
+          <span class="cs-sidebar__num">04</span> Solution &amp; Architecture
+        </a>
+        <a class="cs-sidebar__link" href="#core-modules">
+          <span class="cs-sidebar__num">05</span> Core Modules
+        </a>
+        <a class="cs-sidebar__link" href="#development">
+          <span class="cs-sidebar__num">06</span> Development
+        </a>
+        <a class="cs-sidebar__link" href="#key-metrics">
+          <span class="cs-sidebar__num">07</span> Key Metrics
+        </a>
+        <a class="cs-sidebar__link" href="#impact">
+          <span class="cs-sidebar__num">08</span> Impact
+        </a>
+        <a class="cs-sidebar__link" href="#conclusion">
+          <span class="cs-sidebar__num">09</span> Conclusion
+        </a>
+      </nav>
+    </aside>
+
+    <!-- ── Main Content ─────────────────────────────────────── -->
+    <main class="cs-main-content">
+
+      <!-- 01 Introduction ───────────────────────────────────── -->
+      <section id="introduction" class="cs-section">
+        <div class="container">
+          <span class="cs-section-num">01</span>
+          <span class="cs-section__label">Introduction</span>
+          <h2 class="cs-section__title">About This Project</h2>
+
+          <div class="cs-intro-grid">
+            <div class="cs-intro-card">
+              <div class="cs-intro-card__label">The Product</div>
+              <div class="cs-intro-card__value">
+                <strong>Market Instrument Mastering Platform</strong> — an enterprise-grade fintech application for private banks and brokerages to onboard, validate, and certify financial instruments for Straight-Through Processing. Built as a fully functional prototype covering the complete analyst and reviewer workflow across 17 screens.
+              </div>
+            </div>
+            <div class="cs-intro-card">
+              <div class="cs-intro-card__label">My Role</div>
+              <div class="cs-intro-card__value">
+                <strong>Founding Product Lead</strong> at Vaiteq Solutions. Owned end-to-end product definition: problem framing, persona research, information architecture, workflow design, feature prioritisation, and prototype delivery. Worked directly with a small engineering team through a focused 6-week sprint.
+              </div>
+            </div>
+            <div class="cs-intro-card">
+              <div class="cs-intro-card__label">Current Status</div>
+              <div class="cs-intro-card__value">
+                <strong>Working Prototype — Live on Netlify.</strong> Fully interactive across all workflow stages. Covers the complete dual-persona journey from instrument discovery through reviewer sign-off. Currently in conversations with potential capital-markets clients.
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="cs-overview__block">
-          <div class="cs-overview__block-label">Solution</div>
-          <div class="cs-overview__block-title">AI-Assisted 6-Stage Governance Workflow</div>
-          <div class="cs-overview__block-body">
-            <ul>
-              <li>Unified platform connecting DataOps Analysts to Risk Reviewers in a single tracked workflow</li>
-              <li>AI layer: STP score diagnostics, missing field detection, similar instrument recommendations</li>
-              <li>Live STP readiness scoring with conflict resolution across 5+ data sources</li>
-              <li>Immutable audit log with full attribute lineage for regulatory compliance</li>
-              <li>Dual-control governance: analyst submits → reviewer approves, no self-certification</li>
-            </ul>
+      <!-- 02 Problem Statement ───────────────────────────────── -->
+      <section id="problem-statement" class="cs-section cs-section--alt">
+        <div class="container">
+          <span class="cs-section-num">02</span>
+          <span class="cs-section__label">Problem Statement</span>
+          <h2 class="cs-section__title">A 30–40% STP Failure Rate</h2>
+          <p class="cs-section__body mb-8">In capital markets, Straight-Through Processing failures at the instrument onboarding layer cascade into trade booking delays, settlement risk, and regulatory exposure. The root cause isn't at trade execution — it's in the data.</p>
+
+          <div class="cs-overview">
+            <div class="cs-overview__block">
+              <div class="cs-overview__block-label">The Core Failure</div>
+              <div class="cs-overview__block-title">Manual Reconciliation at Scale</div>
+              <div class="cs-overview__block-body">
+                <ul>
+                  <li>30–40% of new financial instruments failed STP on the first attempt</li>
+                  <li>5+ data sources reconciled manually per instrument — Bloomberg, Reuters, internal databases</li>
+                  <li>No standardised review interface — approvals made in spreadsheets and email threads</li>
+                  <li>Each STP failure triggered costly manual trade intervention, increasing settlement risk</li>
+                </ul>
+              </div>
+            </div>
+            <div class="cs-overview__block">
+              <div class="cs-overview__block-label">The Systemic Gap</div>
+              <div class="cs-overview__block-title">Silos, No Audit Trail, Compliance Exposure</div>
+              <div class="cs-overview__block-body">
+                <ul>
+                  <li>Zero end-to-end audit trail — creating compliance exposure and delayed trade booking</li>
+                  <li>DataOps Analysts and Risk Reviewers working in silos with no shared workflow</li>
+                  <li>Self-certification risk: the same person enriching an instrument often approved it</li>
+                  <li>No live STP readiness signal — failures only discovered post-submission</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- ── Impact Metrics ────────────────────────────────────── -->
-  <section class="cs-section cs-section--alt">
-    <div class="container">
-      <span class="cs-section__label">Business Impact</span>
-      <h2 class="cs-section__title">Measurable Outcomes</h2>
+      <!-- 03 Product Strategy ────────────────────────────────── -->
+      <section id="product-strategy" class="cs-section">
+        <div class="container">
+          <span class="cs-section-num">03</span>
+          <span class="cs-section__label">Product Strategy</span>
+          <h2 class="cs-section__title">Why This, Why Now</h2>
+          <p class="cs-section__body mb-8">Three strategic bets shaped every major decision: MDM as the silent bottleneck in capital markets STP, the dual-persona insight that defined the product shape, and an AI-first architecture that makes the platform defensible over time.</p>
 
-      <div class="grid-4">
-        <div class="card card-metric animate-in">
-          <div class="card-metric__number">85%</div>
-          <div class="card-metric__label">Reduction in STP Failures</div>
-        </div>
-        <div class="card card-metric animate-in">
-          <div class="card-metric__number">90%</div>
-          <div class="card-metric__label">Faster Instrument Onboarding</div>
-        </div>
-        <div class="card card-metric animate-in">
-          <div class="card-metric__number">100%</div>
-          <div class="card-metric__label">Audit Compliance Traceability</div>
-        </div>
-        <div class="card card-metric animate-in">
-          <div class="card-metric__number">&lt;2hr</div>
-          <div class="card-metric__label">Review Turnaround Time</div>
-        </div>
-      </div>
-    </div>
-  </section>
+          <div class="decisions-grid">
+            <div class="card card-insight animate-in">
+              <div class="card-insight__icon">📊</div>
+              <div class="card-insight__title">MDM as the STP Bottleneck</div>
+              <div class="card-insight__body">Capital markets STP fails most often not at trade execution, but at instrument onboarding. Bad reference data — missing ISIN mappings, conflicting settlement attributes, stale pricing conventions — causes downstream booking failures. An MDM platform positioned at the top of the data supply chain eliminates these failures at the source rather than patching them post-trade.</div>
+            </div>
+            <div class="card card-insight animate-in">
+              <div class="card-insight__icon">👥</div>
+              <div class="card-insight__title">The Dual-Persona Insight</div>
+              <div class="card-insight__body">Existing tools treated data entry and data approval as a single-persona activity — creating self-certification risk. The core strategic insight was to hard-separate the DataOps Analyst (who enriches) from the Risk Reviewer (who certifies). This enforces the four-eyes principle structurally, not just as a policy — and maps directly to how regulated firms are required to operate.</div>
+            </div>
+            <div class="card card-insight animate-in">
+              <div class="card-insight__icon">🤖</div>
+              <div class="card-insight__title">AI-First Architecture</div>
+              <div class="card-insight__body">Rather than adding AI as a feature, we embedded it as the data quality layer from day one. The AI co-pilot flags anomalies, detects missing mandatory fields, and surfaces comparable instruments to anchor analyst decisions. This makes the platform's value compound over time — and is the primary moat against point-solution competitors.</div>
+            </div>
+          </div>
 
-  <!-- ── Workflow Stages ───────────────────────────────────── -->
-  <section class="cs-section">
-    <div class="container">
-      <span class="cs-section__label">End-to-End Workflow</span>
-      <h2 class="cs-section__title">Six-Stage Pipeline</h2>
-      <p class="cs-section__body mb-8">From instrument discovery through STP certification, every step is tracked, governed, and AI-assisted.</p>
+          <div class="cs-featured-screenshot animate-in">
+            <img src="../documents/mdm_workflow/screenshots/06_instrument_ai_insights.png"
+                 alt="AI Insights — LLM-generated enrichment recommendations and anomaly flags"
+                 loading="lazy">
+            <p class="cs-featured-screenshot__caption">AI Insights screen: The LLM co-pilot surfaces enrichment recommendations, missing field alerts, and comparable instrument configurations from 156+ validated instruments in the library.</p>
+          </div>
+        </div>
+      </section>
 
-      <div class="workflow-steps">
-        <div class="workflow-step">
-          <div class="workflow-step__num">1</div>
-          <div class="workflow-step__label">Login &amp;<br>Auth</div>
-        </div>
-        <div class="workflow-step">
-          <div class="workflow-step__num">2</div>
-          <div class="workflow-step__label">DataOps<br>Dashboard</div>
-        </div>
-        <div class="workflow-step">
-          <div class="workflow-step__num">3</div>
-          <div class="workflow-step__label">Instrument<br>Search &amp; Fetch</div>
-        </div>
-        <div class="workflow-step">
-          <div class="workflow-step__num">4</div>
-          <div class="workflow-step__label">AI Insights &amp;<br>STP Readiness</div>
-        </div>
-        <div class="workflow-step">
-          <div class="workflow-step__num">5</div>
-          <div class="workflow-step__label">Order<br>Simulation</div>
-        </div>
-        <div class="workflow-step">
-          <div class="workflow-step__num">6</div>
-          <div class="workflow-step__label">Approval<br>Workflow</div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <!-- 04 Solution & Architecture ─────────────────────────── -->
+      <section id="solution" class="cs-section cs-section--alt">
+        <div class="container">
+          <span class="cs-section-num">04</span>
+          <span class="cs-section__label">Solution &amp; Architecture</span>
+          <h2 class="cs-section__title">AI-Assisted 6-Stage Governance Workflow</h2>
+          <p class="cs-section__body mb-8">A unified platform connecting DataOps Analysts and Risk Reviewers in a single tracked workflow. The architecture is built around three principles: AI-assisted enrichment, live STP scoring, and an immutable audit layer.</p>
 
-  <!-- ── Screenshot Carousel ───────────────────────────────── -->
-  <section class="cs-section cs-section--alt">
-    <div class="container">
-      <span class="cs-section__label">Prototype Walkthrough</span>
-      <h2 class="cs-section__title">See the Platform in Action</h2>
-      <p class="cs-section__body mb-8">17 screens showing the complete analyst and reviewer journey. Click any image to view full-size.</p>
+          <div class="cs-overview" style="margin-bottom: 40px;">
+            <div class="cs-overview__block">
+              <div class="cs-overview__block-label">Solution</div>
+              <div class="cs-overview__block-title">Unified Dual-Persona Platform</div>
+              <div class="cs-overview__block-body">
+                <ul>
+                  <li>Unified platform connecting DataOps Analysts to Risk Reviewers in a single tracked workflow</li>
+                  <li>AI layer: STP score diagnostics, missing field detection, similar instrument recommendations</li>
+                  <li>Live STP readiness scoring with conflict resolution across 5+ data sources</li>
+                  <li>Immutable audit log with full attribute lineage for regulatory compliance</li>
+                  <li>Dual-control governance: analyst submits → reviewer approves, no self-certification</li>
+                </ul>
+              </div>
+            </div>
+            <div class="cs-overview__block">
+              <div class="cs-overview__block-label">Architecture Principles</div>
+              <div class="cs-overview__block-title">AI-First, Audit-Native, Role-Separated</div>
+              <div class="cs-overview__block-body">
+                <ul>
+                  <li>Mobile-first application — full feature parity on tablet and desktop</li>
+                  <li>Role-based access control enforced at the UI routing layer</li>
+                  <li>AI enrichment layer operates as a co-pilot — recommendations require analyst confirmation</li>
+                  <li>Every write operation appends to the immutable audit log before updating state</li>
+                  <li>STP score recalculated live on each field edit, giving analysts immediate feedback</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-      <div class="carousel-section">
-        <!-- Stage strip -->
-        <div class="carousel-stage-strip" id="stage-strip">
-          <button class="carousel-stage-label active" type="button">Login</button>
-          <button class="carousel-stage-label" type="button">Dashboard</button>
-          <button class="carousel-stage-label" type="button">Search</button>
-          <button class="carousel-stage-label" type="button">Fetch</button>
-          <button class="carousel-stage-label" type="button">Details</button>
-          <button class="carousel-stage-label" type="button">AI Insights</button>
-          <button class="carousel-stage-label" type="button">STP Check</button>
-          <button class="carousel-stage-label" type="button">Simulate</button>
-          <button class="carousel-stage-label" type="button">Submit</button>
-          <button class="carousel-stage-label" type="button">Tasks</button>
-          <button class="carousel-stage-label" type="button">Reports</button>
-          <button class="carousel-stage-label" type="button">AI Assistant</button>
-          <button class="carousel-stage-label" type="button">AI Response</button>
-          <button class="carousel-stage-label" type="button">Reviewer</button>
-          <button class="carousel-stage-label" type="button">Review Tasks</button>
-          <button class="carousel-stage-label" type="button">Audit Log</button>
-          <button class="carousel-stage-label" type="button">Approval</button>
+          <h3 style="font-size: 1rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 20px;">End-to-End Pipeline</h3>
+          <div class="workflow-steps">
+            <div class="workflow-step">
+              <div class="workflow-step__num">1</div>
+              <div class="workflow-step__label">Login &amp;<br>Auth</div>
+            </div>
+            <div class="workflow-step">
+              <div class="workflow-step__num">2</div>
+              <div class="workflow-step__label">DataOps<br>Dashboard</div>
+            </div>
+            <div class="workflow-step">
+              <div class="workflow-step__num">3</div>
+              <div class="workflow-step__label">Instrument<br>Search &amp; Fetch</div>
+            </div>
+            <div class="workflow-step">
+              <div class="workflow-step__num">4</div>
+              <div class="workflow-step__label">AI Insights &amp;<br>STP Readiness</div>
+            </div>
+            <div class="workflow-step">
+              <div class="workflow-step__num">5</div>
+              <div class="workflow-step__label">Order<br>Simulation</div>
+            </div>
+            <div class="workflow-step">
+              <div class="workflow-step__num">6</div>
+              <div class="workflow-step__label">Approval<br>Workflow</div>
+            </div>
+          </div>
+
+          <div class="cs-featured-screenshot animate-in">
+            <img src="../documents/mdm_workflow/screenshots/02_dataops_dashboard.png"
+                 alt="DataOps Dashboard — Queue management and instrument pipeline overview"
+                 loading="lazy">
+            <p class="cs-featured-screenshot__caption">DataOps Dashboard: The operational heartbeat of the platform — instrument queue status, STP pass/fail rates by asset class, and the analyst's pending task list in a single view.</p>
+          </div>
         </div>
+      </section>
 
-        <!-- Viewport -->
-        <div class="carousel-viewport" id="mdm-carousel" aria-label="MDM Platform screenshot gallery" role="region" tabindex="0"></div>
+      <!-- 05 Core Modules ────────────────────────────────────── -->
+      <section id="core-modules" class="cs-section">
+        <div class="container">
+          <span class="cs-section-num">05</span>
+          <span class="cs-section__label">Core Modules</span>
+          <h2 class="cs-section__title">Platform Capabilities</h2>
+          <p class="cs-section__body mb-8">Six purpose-built modules, each addressing a distinct failure point in the legacy instrument onboarding process.</p>
 
-        <!-- Controls -->
-        <div class="carousel-controls">
-          <button class="carousel-btn prev" aria-label="Previous screenshot">&#8592;</button>
-          <span class="carousel-counter"><span class="current">1</span> / 17</span>
-          <button class="carousel-btn next" aria-label="Next screenshot">&#8594;</button>
+          <div class="cs-modules-grid">
+            <div class="cs-module-card animate-in">
+              <div class="cs-module-card__num">01</div>
+              <div>
+                <div class="cs-module-card__title">DataOps Dashboard</div>
+                <div class="cs-module-card__desc">Live pipeline view showing instrument queue status, STP pass/fail rates, and pending analyst tasks. The operational heartbeat of the platform.</div>
+              </div>
+            </div>
+            <div class="cs-module-card animate-in">
+              <div class="cs-module-card__num">02</div>
+              <div>
+                <div class="cs-module-card__title">Instrument Search &amp; Fetch</div>
+                <div class="cs-module-card__desc">Multi-source lookup across Bloomberg, Reuters, and internal databases with real-time fetch progress. Deduplication and source conflict flagging built in.</div>
+              </div>
+            </div>
+            <div class="cs-module-card animate-in">
+              <div class="cs-module-card__num">03</div>
+              <div>
+                <div class="cs-module-card__title">AI Insights</div>
+                <div class="cs-module-card__desc">LLM-powered enrichment — anomaly flagging, missing field detection, and comparable instrument recommendations drawn from 156+ validated instruments in the library.</div>
+              </div>
+            </div>
+            <div class="cs-module-card animate-in">
+              <div class="cs-module-card__num">04</div>
+              <div>
+                <div class="cs-module-card__title">STP Readiness</div>
+                <div class="cs-module-card__desc">Live scoring engine validating each instrument attribute against downstream trade booking rules. Score updates on every field edit, giving analysts immediate actionable feedback.</div>
+              </div>
+            </div>
+            <div class="cs-module-card animate-in">
+              <div class="cs-module-card__num">05</div>
+              <div>
+                <div class="cs-module-card__title">Order Simulation</div>
+                <div class="cs-module-card__desc">Pre-submission trade simulation — runs a synthetic order through the booking engine to surface any remaining STP risks before the instrument is submitted for approval.</div>
+              </div>
+            </div>
+            <div class="cs-module-card animate-in">
+              <div class="cs-module-card__num">06</div>
+              <div>
+                <div class="cs-module-card__title">Approval Workflow &amp; Audit Log</div>
+                <div class="cs-module-card__desc">Dual-control sign-off with immutable timestamped audit trail. Every attribute change, override, and approval is logged with mandatory reason codes. Designed to pass regulatory inspection on day one.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-featured-screenshot animate-in">
+            <img src="../documents/mdm_workflow/screenshots/07_stp_readiness.png"
+                 alt="STP Readiness Check — Automated validation against trade booking rules"
+                 loading="lazy">
+            <p class="cs-featured-screenshot__caption">STP Readiness screen: The live scoring engine validates every instrument attribute against trade booking rules in real time. Analysts see exactly which fields are blocking STP certification and why.</p>
+          </div>
         </div>
+      </section>
 
-        <!-- Thumbnails -->
-        <div class="carousel-thumbnails" aria-label="Screenshot thumbnails"></div>
-      </div>
-    </div>
-  </section>
+      <!-- 06 Development ─────────────────────────────────────── -->
+      <section id="development" class="cs-section cs-section--alt">
+        <div class="container">
+          <span class="cs-section-num">06</span>
+          <span class="cs-section__label">Development</span>
+          <h2 class="cs-section__title">How It Was Built</h2>
+          <p class="cs-section__body mb-8">The platform was built prototype-first — shipping a functional, demo-ready product before investing in a production backend. This let us validate workflow assumptions with real stakeholder feedback early.</p>
 
-  <!-- ── Key Design Decisions ──────────────────────────────── -->
-  <section class="cs-section">
-    <div class="container">
-      <span class="cs-section__label">Product Thinking</span>
-      <h2 class="cs-section__title">Key Design Decisions</h2>
-
-      <div class="decisions-grid">
-        <div class="card card-insight animate-in">
-          <div class="card-insight__icon">👥</div>
-          <div class="card-insight__title">Dual-Persona Architecture</div>
-          <div class="card-insight__body">Separated DataOps Analyst (discovery, enrichment, validation) from Risk Reviewer (inspection, approval, certification) into distinct views with appropriate permissions. No self-certification allowed — enforcing the four-eyes principle from day one.</div>
+          <div class="cs-overview">
+            <div class="cs-overview__block">
+              <div class="cs-overview__block-label">Process</div>
+              <div class="cs-overview__block-title">6-Week Prototype Sprint</div>
+              <div class="cs-overview__block-body">
+                <ul>
+                  <li><strong>Weeks 1–2:</strong> Persona research, workflow mapping, and information architecture. Validated the dual-persona insight through operator interviews at two brokerages.</li>
+                  <li><strong>Weeks 3–4:</strong> Component-first build — all 17 screens built and linked with a mocked data layer. Full analyst journey navigable end-to-end.</li>
+                  <li><strong>Weeks 5–6:</strong> AI integration, STP scoring logic, audit log, and reviewer flow. Deployed to Netlify for stakeholder demos.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="cs-overview__block">
+              <div class="cs-overview__block-label">Stack &amp; Approach</div>
+              <div class="cs-overview__block-title">Claude Code-Assisted, Netlify-Deployed</div>
+              <div class="cs-overview__block-body">
+                <ul>
+                  <li><strong>Frontend:</strong> React with a mobile-first component library — built for touch-first field use by DataOps Analysts</li>
+                  <li><strong>AI Tooling:</strong> Claude Code accelerated component scaffolding and data mock generation, compressing the build sprint by an estimated 30%</li>
+                  <li><strong>Deployment:</strong> Netlify continuous deployment — every push auto-deploys. Demo link always current.</li>
+                  <li><strong>Data layer:</strong> Local state with realistic instrument seed data covering equities, bonds, and derivatives</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="card card-insight animate-in">
-          <div class="card-insight__icon">🤖</div>
-          <div class="card-insight__title">AI-Assisted Enrichment</div>
-          <div class="card-insight__body">Instead of replacing analysts, the AI layer acts as a co-pilot: flagging anomalies, detecting missing fields, and recommending validated configurations from 156+ comparable instruments. This preserves analyst judgment while eliminating repetitive lookup work.</div>
-        </div>
+      <!-- 07 Key Metrics ─────────────────────────────────────── -->
+      <section id="key-metrics" class="cs-section">
+        <div class="container">
+          <span class="cs-section-num">07</span>
+          <span class="cs-section__label">Business Impact</span>
+          <h2 class="cs-section__title">Measurable Outcomes</h2>
 
-        <div class="card card-insight animate-in">
-          <div class="card-insight__icon">📋</div>
-          <div class="card-insight__title">Immutable Audit Log</div>
-          <div class="card-insight__body">Every attribute change, override, and approval decision is captured in a timestamped, tamper-proof audit trail with mandatory reason logging for reviewer overrides. This wasn't just a compliance checkbox — it became the trust layer that allowed faster approvals.</div>
+          <div class="grid-4">
+            <div class="card card-metric animate-in">
+              <div class="card-metric__number">85%</div>
+              <div class="card-metric__label">Reduction in STP Failures</div>
+            </div>
+            <div class="card card-metric animate-in">
+              <div class="card-metric__number">90%</div>
+              <div class="card-metric__label">Faster Instrument Onboarding</div>
+            </div>
+            <div class="card card-metric animate-in">
+              <div class="card-metric__number">100%</div>
+              <div class="card-metric__label">Audit Compliance Traceability</div>
+            </div>
+            <div class="card card-metric animate-in">
+              <div class="card-metric__number">&lt;2hr</div>
+              <div class="card-metric__label">Review Turnaround Time</div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- ── Live Prototype + PDF ──────────────────────────────── -->
-  <section class="cs-section cs-section--alt">
-    <div class="container" style="display: flex; flex-direction: column; gap: 20px;">
-      <div class="pdf-download-block animate-in" style="border-color: rgba(201,168,76,0.4);">
-        <div class="pdf-download-block__icon">🚀</div>
-        <div class="pdf-download-block__text">
-          <div class="pdf-download-block__title">Live Working Prototype</div>
-          <div class="pdf-download-block__desc">Full instruments workflow · Reviewer approval with audit log · STP Report · Dashboard · AI Assistant</div>
+      <!-- 08 Impact ──────────────────────────────────────────── -->
+      <section id="impact" class="cs-section cs-section--alt">
+        <div class="container">
+          <span class="cs-section-num">08</span>
+          <span class="cs-section__label">Impact</span>
+          <h2 class="cs-section__title">Key Design Decisions</h2>
+
+          <div class="decisions-grid">
+            <div class="card card-insight animate-in">
+              <div class="card-insight__icon">👥</div>
+              <div class="card-insight__title">Dual-Persona Architecture</div>
+              <div class="card-insight__body">Separated DataOps Analyst (discovery, enrichment, validation) from Risk Reviewer (inspection, approval, certification) into distinct views with appropriate permissions. No self-certification allowed — enforcing the four-eyes principle from day one.</div>
+            </div>
+            <div class="card card-insight animate-in">
+              <div class="card-insight__icon">🤖</div>
+              <div class="card-insight__title">AI-Assisted Enrichment</div>
+              <div class="card-insight__body">Instead of replacing analysts, the AI layer acts as a co-pilot: flagging anomalies, detecting missing fields, and recommending validated configurations from 156+ comparable instruments. This preserves analyst judgment while eliminating repetitive lookup work.</div>
+            </div>
+            <div class="card card-insight animate-in">
+              <div class="card-insight__icon">📋</div>
+              <div class="card-insight__title">Immutable Audit Log</div>
+              <div class="card-insight__body">Every attribute change, override, and approval decision is captured in a timestamped, tamper-proof audit trail with mandatory reason logging for reviewer overrides. This wasn't just a compliance checkbox — it became the trust layer that allowed faster approvals.</div>
+            </div>
+          </div>
+
+          <div class="cs-featured-screenshot animate-in">
+            <img src="../documents/mdm_workflow/screenshots/16_audit_log.png"
+                 alt="Audit Log — Immutable timestamped record of all actions and override reasons"
+                 loading="lazy">
+            <p class="cs-featured-screenshot__caption">Audit Log: Every attribute change, field override, and approval decision is captured in a tamper-proof, timestamped trail. Mandatory reason codes for reviewer overrides mean the log tells a complete story — not just what changed, but why.</p>
+          </div>
         </div>
-        <a href="https://bolarbrijesh-fintech-mdm-worflow.netlify.app/"
-           target="_blank" rel="noopener noreferrer"
-           class="btn btn-gold">Launch Prototype ↗</a>
-      </div>
-      <div class="pdf-download-block animate-in">
-        <div class="pdf-download-block__icon">📄</div>
-        <div class="pdf-download-block__text">
-          <div class="pdf-download-block__title">Full Prototype Presentation</div>
-          <div class="pdf-download-block__desc">Detailed walkthrough of the platform architecture, user journeys, AI capability layer, and business impact outcomes.</div>
+      </section>
+
+      <!-- 09 Conclusion ──────────────────────────────────────── -->
+      <section id="conclusion" class="cs-section">
+        <div class="container">
+          <span class="cs-section-num">09</span>
+          <span class="cs-section__label">Conclusion</span>
+          <h2 class="cs-section__title">What This Demonstrates</h2>
+          <p class="cs-section__body">
+            The MDM Platform is a proof that enterprise fintech can be built with clarity and velocity. In six weeks, starting from a problem statement and a blank repository, the product went from operator research to a fully interactive prototype deployed on Netlify — covering every stage of the instrument governance lifecycle.
+          </p>
+          <p class="cs-section__body mt-6">
+            The core product decisions — dual-persona separation, AI-as-co-pilot, audit-native architecture — were not design preferences. They were direct responses to regulatory and operational constraints in capital markets. That grounding is what makes the platform viable beyond the prototype stage, and what the business impact numbers reflect.
+          </p>
+
+          <div class="cs-conclusion-ctas">
+            <div class="pdf-download-block animate-in" style="border-color: rgba(201,168,76,0.4);">
+              <div class="pdf-download-block__icon">🚀</div>
+              <div class="pdf-download-block__text">
+                <div class="pdf-download-block__title">Live Working Prototype</div>
+                <div class="pdf-download-block__desc">Full instruments workflow · Reviewer approval with audit log · STP Report · Dashboard · AI Assistant</div>
+              </div>
+              <a href="https://bolarbrijesh-fintech-mdm-worflow.netlify.app/"
+                 target="_blank" rel="noopener noreferrer"
+                 class="btn btn-gold">Launch Prototype ↗</a>
+            </div>
+            <div class="pdf-download-block animate-in">
+              <div class="pdf-download-block__icon">📄</div>
+              <div class="pdf-download-block__text">
+                <div class="pdf-download-block__title">Full Prototype Presentation</div>
+                <div class="pdf-download-block__desc">Detailed walkthrough of platform architecture, user journeys, AI capability layer, and business impact outcomes.</div>
+              </div>
+              <a href="../documents/MDM Prototype Presentation.pdf"
+                 target="_blank" rel="noopener noreferrer"
+                 class="btn btn-outline">↓ View PDF</a>
+            </div>
+          </div>
         </div>
-        <a href="../documents/MDM Prototype Presentation.pdf"
-           target="_blank" rel="noopener noreferrer"
-           class="btn btn-outline">↓ View PDF</a>
-      </div>
-    </div>
-  </section>
+      </section>
+
+    </main><!-- /.cs-main-content -->
+  </div><!-- /.cs-with-sidebar -->
 
   <!-- ── Footer ────────────────────────────────────────────── -->
   <footer class="site-footer">
@@ -287,33 +523,86 @@
   </footer>
 
   <script src="../js/main.js"></script>
-  <script src="../js/carousel.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      initCarousel({
-        viewportId: 'mdm-carousel',
-        stageLabelClass: 'carousel-stage-label',
-        slides: [
-          { src: '../documents/mdm_workflow/screenshots/01_mdm_login.png',              alt: 'MDM Login Screen',           caption: 'Stage 1: Secure Login — Role-based access control for Analysts and Reviewers' },
-          { src: '../documents/mdm_workflow/screenshots/02_dataops_dashboard.png',      alt: 'DataOps Dashboard',          caption: 'Stage 2: DataOps Dashboard — Queue management and instrument pipeline overview' },
-          { src: '../documents/mdm_workflow/screenshots/03_instrument_search.png',      alt: 'Instrument Search',          caption: 'Stage 3: Instrument Search — Multi-source lookup with auto-suggest' },
-          { src: '../documents/mdm_workflow/screenshots/04_instrument_fetch_progress.png', alt: 'Fetch Progress',          caption: 'Stage 4: Fetch Progress — Real-time data ingestion status from Bloomberg, Reuters, and internal sources' },
-          { src: '../documents/mdm_workflow/screenshots/05_instrument_details.png',     alt: 'Instrument Details',         caption: 'Stage 5: Instrument Details — Full attribute view for mastered instruments with source confidence scores' },
-          { src: '../documents/mdm_workflow/screenshots/06_instrument_ai_insights.png', alt: 'AI Insights',               caption: 'Stage 6: AI Insights — LLM-generated enrichment recommendations and anomaly flags' },
-          { src: '../documents/mdm_workflow/screenshots/07_stp_readiness.png',          alt: 'STP Readiness Check',        caption: 'Stage 7: STP Readiness Check — Automated validation against trade booking rules with scoring' },
-          { src: '../documents/mdm_workflow/screenshots/08_simulate_order_booking.png', alt: 'Order Simulation',           caption: 'Stage 8: Order Simulation — Pre-submit trade validation with risk scoring' },
-          { src: '../documents/mdm_workflow/screenshots/09_submit_for_approval.png',    alt: 'Submit for Approval',        caption: 'Stage 9: Submit for Approval — Workflow handoff to reviewer with audit trail initiation' },
-          { src: '../documents/mdm_workflow/screenshots/10_tasks_tab.png',              alt: 'Tasks Tab',                  caption: 'Stage 10: Tasks Tab — Analyst task management and pending items queue' },
-          { src: '../documents/mdm_workflow/screenshots/11_stp_reports_tab.png',        alt: 'STP Reports',               caption: 'Stage 11: STP Reports — Exception tracking and STP rate trend dashboards' },
-          { src: '../documents/mdm_workflow/screenshots/12_ai_assistant_tab.png',       alt: 'AI Assistant Tab',           caption: 'Stage 12: AI Assistant — Embedded LLM chat for instrument queries and guidance' },
-          { src: '../documents/mdm_workflow/screenshots/13_ai_response.png',            alt: 'AI Response',               caption: 'Stage 13: AI Response — Contextual answers with source citations' },
-          { src: '../documents/mdm_workflow/screenshots/14_reviewer_dashboard.png',     alt: 'Reviewer Dashboard',        caption: 'Stage 14: Reviewer Dashboard — Risk-ranked review queue for the senior reviewer persona' },
-          { src: '../documents/mdm_workflow/screenshots/15_reviewer_tasks_tab.png',     alt: 'Reviewer Tasks',            caption: 'Stage 15: Reviewer Tasks — Detailed review interface with approve/reject actions and lineage view' },
-          { src: '../documents/mdm_workflow/screenshots/16_audit_log.png',              alt: 'Audit Log',                 caption: 'Stage 16: Audit Log — Immutable timestamped record of all actions and override reasons' },
-          { src: '../documents/mdm_workflow/screenshots/17_approval_confirmation.png',  alt: 'Approval Confirmation',     caption: 'Stage 17: Approval Confirmed — End-to-end workflow completion with STP certification' }
-        ]
+    /* ── MDM Sidebar Scrollspy & Mobile TOC ──────────────────
+       Fully isolated from main.js. Zero shared state.
+    ──────────────────────────────────────────────────────── */
+    (function () {
+      'use strict';
+
+      /* 1. Mobile TOC toggle */
+      var mobileToc = document.getElementById('cs-mobile-toc');
+      var mobileTocToggle = document.getElementById('cs-mobile-toc-toggle');
+      if (mobileToc && mobileTocToggle) {
+        mobileTocToggle.addEventListener('click', function () {
+          var isOpen = mobileToc.classList.toggle('open');
+          mobileTocToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+        mobileToc.querySelectorAll('.cs-mobile-toc__link').forEach(function (link) {
+          link.addEventListener('click', function () {
+            mobileToc.classList.remove('open');
+            mobileTocToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      /* 2. Scrollspy via IntersectionObserver */
+      var sidebarLinks = Array.from(
+        document.querySelectorAll('.cs-sidebar__link[href^="#"]')
+      );
+      if (!sidebarLinks.length) return;
+
+      var sections = Array.from(
+        document.querySelectorAll('main.cs-main-content section[id]')
+      );
+      if (!sections.length) return;
+
+      var visibleSections = new Set();
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          var id = entry.target.getAttribute('id');
+          if (entry.isIntersecting) {
+            visibleSections.add(id);
+          } else {
+            visibleSections.delete(id);
+          }
+        });
+
+        /* Activate the topmost visible section (DOM order wins) */
+        var activeId = null;
+        sections.forEach(function (section) {
+          if (activeId === null && visibleSections.has(section.getAttribute('id'))) {
+            activeId = section.getAttribute('id');
+          }
+        });
+
+        sidebarLinks.forEach(function (link) {
+          var id = link.getAttribute('href').slice(1);
+          link.classList.toggle('active', id === activeId);
+        });
+      }, {
+        rootMargin: '-15% 0px -70% 0px',
+        threshold: 0
       });
-    });
+
+      sections.forEach(function (section) { observer.observe(section); });
+
+      /* 3. Smooth scroll with nav offset for sidebar links */
+      var nav = document.getElementById('site-nav');
+      sidebarLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          var targetId = link.getAttribute('href').slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+          e.preventDefault();
+          var navHeight = nav ? nav.offsetHeight : 72;
+          var top = target.getBoundingClientRect().top + window.scrollY - navHeight - 16;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        });
+      });
+
+    }());
   </script>
 </body>
 </html>

@@ -643,32 +643,26 @@
   min-width: 0;
 }
 
-/* Container inside main content: max-width is handled by .cs-with-sidebar.
-   On desktop, zero out padding (sidebar wrapper already provides left/right spacing).
-   On mobile, keep the default 24px horizontal padding so text doesn't touch edges. */
+/* All content inside the main column gets consistent horizontal padding.
+   Container max-width is overridden since .cs-with-sidebar handles centering. */
 .cs-main-content .cs-section .container,
 .cs-main-content .cs-section--alt .container {
   max-width: none;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
-@media (min-width: 1024px) {
-  .cs-main-content .cs-section .container,
-  .cs-main-content .cs-section--alt .container {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-/* Section-level content blocks (cards, grids) that sit *outside* .container
-   but inside .cs-section need their own horizontal padding to align with
-   the heading text above them. */
 .cs-section-cards {
-  padding: 0 24px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 639px) {
+  .cs-main-content .cs-section .container,
+  .cs-main-content .cs-section--alt .container,
   .cs-section-cards {
-    padding: 0;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 

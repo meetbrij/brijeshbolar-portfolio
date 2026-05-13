@@ -929,14 +929,6 @@
   margin-top: 40px;
 }
 
-@media (min-width: 640px) {
-  .cs-conclusion-ctas {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-
 .cs-conclusion-ctas .pdf-download-block {
-  flex: 1;
-  min-width: 260px;
+  width: 100%;
 }

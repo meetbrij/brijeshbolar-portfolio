@@ -122,6 +122,13 @@
   border-radius: var(--radius-md);
 }
 
+/* On alt-background sections, lift cards to tertiary so they're visible */
+.cs-section--alt .cs-overview__block,
+.cs-section--alt .card,
+.cs-section--alt .card-insight {
+  background: var(--color-bg-tertiary);
+}
+
 .cs-overview__block-label {
   font-size: 0.72rem;
   font-weight: 700;

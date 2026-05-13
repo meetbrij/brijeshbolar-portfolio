@@ -866,42 +866,59 @@
 }
 
 /* ── Featured screenshot — side-by-side layout ────────────── */
+/* Featured screenshot: image left (~350px), caption text right */
 .cs-featured-screenshot {
   margin-top: 40px;
-  border: 1px solid var(--color-border-subtle);
-  background: var(--color-bg-secondary);
-  border-radius: var(--radius-md);
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* Image: full width, full height, no cropping */
+@media (min-width: 640px) {
+  .cs-featured-screenshot {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+  }
+}
+
+/* Image wrap: fixed width, no background, no border-radius */
 .cs-featured-screenshot__img-wrap {
-  background: #0d1a2e;
-  line-height: 0;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .cs-featured-screenshot__img-wrap {
+    width: 350px;
+  }
 }
 
 .cs-featured-screenshot__img-wrap img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-subtle);
 }
 
-/* Caption below the image */
+/* Caption: takes remaining space, vertically centred */
 .cs-featured-screenshot__caption {
-  padding: 16px 24px;
-  border-top: 1px solid var(--color-border-subtle);
-  font-size: 0.85rem;
+  flex: 1;
+  font-size: 0.9rem;
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
   margin: 0;
+  padding: 0;
+  align-self: center;
 }
 
 .cs-featured-screenshot__caption strong {
   display: block;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--color-text-primary);
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 /* ── Conclusion CTA row ───────────────────────────────────── */

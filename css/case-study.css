@@ -868,80 +868,40 @@
 /* ── Featured screenshot — side-by-side layout ────────────── */
 .cs-featured-screenshot {
   margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  border-radius: var(--radius-md);
-  overflow: hidden;
   border: 1px solid var(--color-border-subtle);
   background: var(--color-bg-secondary);
-}
-
-@media (min-width: 640px) {
-  .cs-featured-screenshot {
-    flex-direction: row;
-    align-items: stretch;
-  }
-}
-
-/* Image sits on the left, constrained so it fits in one viewport height */
-.cs-featured-screenshot__img-wrap {
-  flex-shrink: 0;
-  background: #0d1a2e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: var(--radius-md);
   overflow: hidden;
 }
 
-@media (max-width: 639px) {
-  .cs-featured-screenshot__img-wrap {
-    max-height: 240px;
-  }
-}
-
-@media (min-width: 640px) {
-  .cs-featured-screenshot__img-wrap {
-    width: 55%;
-    max-height: 380px;
-  }
+/* Image: full width, full height, no cropping */
+.cs-featured-screenshot__img-wrap {
+  background: #0d1a2e;
+  line-height: 0;
 }
 
 .cs-featured-screenshot__img-wrap img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top left;
+  height: auto;
   display: block;
 }
 
-/* Caption/text panel on the right */
+/* Caption below the image */
 .cs-featured-screenshot__caption {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 24px 28px;
+  padding: 16px 24px;
   border-top: 1px solid var(--color-border-subtle);
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   color: var(--color-text-secondary);
-  line-height: 1.7;
+  line-height: 1.6;
   margin: 0;
-}
-
-@media (min-width: 640px) {
-  .cs-featured-screenshot__caption {
-    border-top: none;
-    border-left: 1px solid var(--color-border-subtle);
-  }
 }
 
 .cs-featured-screenshot__caption strong {
   display: block;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--color-text-primary);
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 /* ── Conclusion CTA row ───────────────────────────────────── */

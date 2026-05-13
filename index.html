@@ -236,54 +236,78 @@
         <h2 class="section__title">Where I've Worked</h2>
         <div class="gold-divider"></div>
       </div>
-    </div>
 
-    <div class="exp-cards-wrapper">
-      <div class="exp-cards-track">
-
-        <div class="exp-card animate-in">
-          <div class="exp-card__top">
-            <div class="exp-card__company">Vaiteq Solutions</div>
-            <div class="exp-card__location">Mumbai</div>
-          </div>
-          <div class="exp-card__role">Founding Product Leader · AI Product Builder</div>
-          <p class="exp-card__desc">Built AI-native fintech products end-to-end — MDM Platform, AI Deal Room, and a financial intelligence platform aggregating 200+ data sources. Full product lifecycle from discovery to live prototype, using Claude Code to compress build cycles.</p>
-          <div class="exp-card__period">Jan 2024 – Present</div>
+      <!-- Detail panel — changes on indicator click -->
+      <div class="exp-detail animate-in" id="exp-detail">
+        <div class="exp-detail__panel active" data-panel="0">
+          <div class="exp-detail__role">Founding Product Leader · AI Product Builder</div>
+          <p class="exp-detail__desc">Built AI-native fintech products end-to-end — MDM Platform for capital markets instrument governance, AI Deal Room for M&amp;A workflow automation, and a financial intelligence platform aggregating 200+ data sources. Owned full product lifecycle from discovery to live prototype, leveraging Claude Code to compress build cycles by 30–40%.</p>
         </div>
-
-        <div class="exp-card animate-in">
-          <div class="exp-card__top">
-            <div class="exp-card__company">Bank of Singapore</div>
-            <div class="exp-card__location">OCBC · Singapore</div>
-          </div>
-          <div class="exp-card__role">AVP · Technical Product Lead</div>
-          <p class="exp-card__desc">Co-owned product strategy for the Instrument Creation platform, delivering S$1.2M in annual cost savings. Led compliance-critical workflows for real-time regulatory processing across wealth management and digital banking.</p>
-          <div class="exp-card__period">Jun 2019 – Dec 2023</div>
+        <div class="exp-detail__panel" data-panel="1">
+          <div class="exp-detail__role">AVP · Technical Product Lead</div>
+          <p class="exp-detail__desc">Co-owned product strategy for the Instrument Creation platform, delivering S$1.2M in annual cost savings by replacing a third-party vendor system. Led compliance-critical workflows enabling real-time event-driven processing and regulatory adherence across wealth management and digital banking.</p>
         </div>
-
-        <div class="exp-card animate-in">
-          <div class="exp-card__top">
-            <div class="exp-card__company">Standard Chartered</div>
-            <div class="exp-card__location">Singapore</div>
-          </div>
-          <div class="exp-card__role">Senior Full Stack Developer</div>
-          <p class="exp-card__desc">Delivered bancassurance mobile products contributing to 17% revenue growth. Co-developed a personalised investment advisory platform driving 36% portfolio growth and 28% revenue uplift across retail and corporate banking.</p>
-          <div class="exp-card__period">Sep 2016 – Jun 2019</div>
+        <div class="exp-detail__panel" data-panel="2">
+          <div class="exp-detail__role">Senior Full Stack Developer</div>
+          <p class="exp-detail__desc">Delivered bancassurance mobile products contributing to 17% revenue growth through improved customer journeys and conversion optimisation. Co-developed a personalised investment advisory platform driving 36% portfolio growth and 28% revenue uplift across retail and corporate banking.</p>
         </div>
-
-        <div class="exp-card animate-in">
-          <div class="exp-card__top">
-            <div class="exp-card__company">Singtel</div>
-            <div class="exp-card__location">Singapore</div>
-          </div>
-          <div class="exp-card__role">Senior Front End Developer</div>
-          <p class="exp-card__desc">Led digital transformation of Singtel's e-commerce platform — 35% conversion increase, 39% revenue growth, and 60% engagement uplift through data-driven UX improvements across Singapore's largest telco.</p>
-          <div class="exp-card__period">Dec 2014 – Aug 2016</div>
+        <div class="exp-detail__panel" data-panel="3">
+          <div class="exp-detail__role">Senior Front End Developer</div>
+          <p class="exp-detail__desc">Led digital transformation of Singtel's e-commerce platform — 35% conversion increase, 39% revenue growth, and 60% engagement uplift through data-driven UX improvements and frontend optimisation across Singapore's largest telco.</p>
         </div>
+      </div>
+
+      <!-- Indicator cards — clickable, sit below the detail -->
+      <div class="exp-indicators">
+
+        <button class="exp-card active" data-index="0" aria-pressed="true">
+          <div class="exp-card__company">Vaiteq Solutions</div>
+          <div class="exp-card__role-short">Founding Product Leader</div>
+          <div class="exp-card__period">2024 – Present</div>
+          <div class="exp-card__bar"></div>
+        </button>
+
+        <button class="exp-card" data-index="1" aria-pressed="false">
+          <div class="exp-card__company">Bank of Singapore</div>
+          <div class="exp-card__role-short">AVP · Product Lead</div>
+          <div class="exp-card__period">2019 – 2023</div>
+          <div class="exp-card__bar"></div>
+        </button>
+
+        <button class="exp-card" data-index="2" aria-pressed="false">
+          <div class="exp-card__company">Standard Chartered</div>
+          <div class="exp-card__role-short">Sr Full Stack Developer</div>
+          <div class="exp-card__period">2016 – 2019</div>
+          <div class="exp-card__bar"></div>
+        </button>
+
+        <button class="exp-card" data-index="3" aria-pressed="false">
+          <div class="exp-card__company">Singtel</div>
+          <div class="exp-card__role-short">Sr Front End Developer</div>
+          <div class="exp-card__period">2014 – 2016</div>
+          <div class="exp-card__bar"></div>
+        </button>
 
       </div>
     </div>
   </section>
+
+  <script>
+    (function () {
+      var cards = document.querySelectorAll('.exp-card[data-index]');
+      var panels = document.querySelectorAll('.exp-detail__panel');
+      cards.forEach(function (card) {
+        card.addEventListener('click', function () {
+          var idx = this.dataset.index;
+          cards.forEach(function (c) { c.classList.remove('active'); c.setAttribute('aria-pressed', 'false'); });
+          panels.forEach(function (p) { p.classList.remove('active'); });
+          this.classList.add('active');
+          this.setAttribute('aria-pressed', 'true');
+          document.querySelector('.exp-detail__panel[data-panel="' + idx + '"]').classList.add('active');
+        });
+      });
+    })();
+  </script>
 
   <!-- ── Selected Work ─────────────────────────────────────────── -->
   <section id="work" class="section">

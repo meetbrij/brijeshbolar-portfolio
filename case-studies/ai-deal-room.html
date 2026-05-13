@@ -46,6 +46,7 @@
         <span class="tag">AI Copilot</span>
         <span class="tag">Workflow Automation</span>
         <span class="badge badge--green">Working Prototype</span>
+        <span class="cs-read-time">📖 8 min read</span>
       </div>
 
       <h1 class="cs-hero__title">AI Deal Room — M&amp;A Workflow Copilot</h1>
@@ -66,105 +67,449 @@
           <span class="cs-metric-chip__num">M&amp;A</span>
           <span class="cs-metric-chip__label">Primary workflow</span>
         </div>
+        <div class="cs-metric-chip">
+          <span class="cs-metric-chip__num">5</span>
+          <span class="cs-metric-chip__label">AI-powered modules</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Problem ───────────────────────────────────────────── -->
-  <section class="cs-section">
-    <div class="container">
-      <span class="cs-section__label">Problem Statement</span>
-      <h2 class="cs-section__title">The Hidden Cost of Deal Prep</h2>
+  <!-- ── Mobile Jump-to TOC ────────────────────────────────── -->
+  <div class="cs-mobile-toc" id="cs-mobile-toc">
+    <button class="cs-mobile-toc__toggle" id="cs-mobile-toc-toggle" aria-expanded="false">
+      Jump to section <span class="cs-mobile-toc__toggle-icon">▼</span>
+    </button>
+    <nav class="cs-mobile-toc__menu" aria-label="Page sections">
+      <a class="cs-mobile-toc__link" href="#introduction"><span>01</span> Introduction</a>
+      <a class="cs-mobile-toc__link" href="#problem-statement"><span>02</span> Problem Statement</a>
+      <a class="cs-mobile-toc__link" href="#core-features"><span>03</span> Core Features</a>
+      <a class="cs-mobile-toc__link" href="#meeting-intelligence"><span>04</span> Meeting Intelligence</a>
+      <a class="cs-mobile-toc__link" href="#workflow-automation"><span>05</span> Workflow Automation</a>
+      <a class="cs-mobile-toc__link" href="#ic-memo"><span>06</span> IC Memo Drafter</a>
+      <a class="cs-mobile-toc__link" href="#conclusion"><span>07</span> Conclusion</a>
+    </nav>
+  </div>
 
-      <div class="two-col">
-        <div>
+  <!-- ── Two-column shell ──────────────────────────────────── -->
+  <div class="cs-with-sidebar">
+
+    <!-- ── Sticky Sidebar TOC ──────────────────────────────── -->
+    <aside class="cs-sidebar" aria-label="Page table of contents">
+      <p class="cs-sidebar__title">Contents</p>
+      <nav class="cs-sidebar__nav" aria-label="Case study sections">
+        <a class="cs-sidebar__link active" href="#introduction">
+          <span class="cs-sidebar__num">01</span> Introduction
+        </a>
+        <a class="cs-sidebar__link" href="#problem-statement">
+          <span class="cs-sidebar__num">02</span> Problem Statement
+        </a>
+        <a class="cs-sidebar__link" href="#core-features">
+          <span class="cs-sidebar__num">03</span> Core Features
+        </a>
+        <a class="cs-sidebar__link" href="#meeting-intelligence">
+          <span class="cs-sidebar__num">04</span> Meeting Intelligence
+        </a>
+        <a class="cs-sidebar__link" href="#workflow-automation">
+          <span class="cs-sidebar__num">05</span> Workflow Automation
+        </a>
+        <a class="cs-sidebar__link" href="#ic-memo">
+          <span class="cs-sidebar__num">06</span> IC Memo Drafter
+        </a>
+        <a class="cs-sidebar__link" href="#conclusion">
+          <span class="cs-sidebar__num">07</span> Conclusion
+        </a>
+      </nav>
+    </aside>
+
+    <!-- ── Main Content ─────────────────────────────────────── -->
+    <main class="cs-main-content">
+
+      <!-- 01 Introduction ───────────────────────────────────── -->
+      <section id="introduction" class="cs-section">
+        <div class="container">
+          <span class="cs-section-num">01</span>
+          <span class="cs-section__label">Introduction</span>
+          <h2 class="cs-section__title">About This Project</h2>
+        </div>
+        <div class="cs-section-cards mt-8">
+          <div class="cs-intro-grid">
+            <div class="cs-intro-card">
+              <div class="cs-intro-card__label">The Product</div>
+              <div class="cs-intro-card__value">
+                <strong>AI Deal Room Assistant</strong> — an M&amp;A workflow copilot for junior investment banking analysts. Built around a fictional Mumbai-based boutique bank (Indus Meridian Capital) with realistic dummy data covering three live deals across deal origination, pitch preparation, due diligence, and IC approval.
+              </div>
+            </div>
+            <div class="cs-intro-card">
+              <div class="cs-intro-card__label">My Role</div>
+              <div class="cs-intro-card__value">
+                <strong>Solo Product Lead &amp; Builder</strong> at Vaiteq Solutions. Defined the problem space through IB analyst interviews, designed the five-module workflow, specified the AI interaction layer, and built the full prototype using Claude Code in under a week.
+              </div>
+            </div>
+            <div class="cs-intro-card">
+              <div class="cs-intro-card__label">Current Status</div>
+              <div class="cs-intro-card__value">
+                <strong>Working Prototype — Live on Netlify.</strong> Fully navigable across all five modules. Covers the complete analyst workflow from deal setup through IC memo submission. Design principle: AI does the first draft. The banker owns the final.
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-top: 40px;">
+            <div class="cs-featured-screenshot animate-in" style="flex: 1; min-width: 280px; margin-top: 0;">
+              <div class="cs-featured-screenshot__img-wrap">
+                <img src="../documents/ai-deal-room/screenshots/Screenshot 2026-05-13 at 5.39.02 PM.png"
+                     alt="AI Deal Room login screen — Indus Meridian Capital"
+                     loading="lazy">
+              </div>
+              <p class="cs-featured-screenshot__caption">
+                <strong>Secure Login</strong> Role-based access restricted to authorised IMC personnel. Demo mode pre-populates credentials for prototype evaluation.
+              </p>
+            </div>
+            <div class="cs-featured-screenshot animate-in" style="flex: 1; min-width: 280px; margin-top: 0;">
+              <div class="cs-featured-screenshot__img-wrap">
+                <img src="../documents/ai-deal-room/screenshots/Screenshot 2026-05-13 at 5.39.18 PM.png"
+                     alt="AI Deal Room dashboard — 3 active deals across pipeline stages"
+                     loading="lazy">
+              </div>
+              <p class="cs-featured-screenshot__caption">
+                <strong>Deal Dashboard</strong> Three active deals tracked across pipeline stages — Pitch Preparation, Due Diligence, IC Approval. Pending actions, meeting schedule, and deal values at a glance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 Problem Statement ───────────────────────────────── -->
+      <section id="problem-statement" class="cs-section cs-section--alt">
+        <div class="container">
+          <span class="cs-section-num">02</span>
+          <span class="cs-section__label">Problem Statement</span>
+          <h2 class="cs-section__title">The Hidden Cost of Deal Prep</h2>
+          <p class="cs-section__body">In investment banking, junior analysts spend a disproportionate share of their time on low-leverage preparation tasks: pulling comparable transaction data, assembling pitch deck sections, summarising target company profiles, formatting financial models. This is work that requires attention to detail and domain knowledge — but not senior judgment.</p>
+          <p class="cs-section__body mt-4">The result: senior bankers are bottlenecked on review, junior analysts are burned out on repetitive assembly, and deal teams move slower than they should at the most time-sensitive moments of a transaction.</p>
+        </div>
+        <div class="cs-section-cards mt-8">
+          <div class="cs-overview">
+            <div class="cs-overview__block">
+              <div class="cs-overview__block-label">Pain Points Targeted</div>
+              <div class="cs-overview__block-title">Manual Assembly at Deal Speed</div>
+              <div class="cs-overview__block-body">
+                <ul>
+                  <li>Manual comparable transaction research consuming 3–5 hours per deal</li>
+                  <li>Target company profile assembly from disparate sources (CIM, Bloomberg, internal databases)</li>
+                  <li>Pitch deck section drafting and reformatting for every client meeting</li>
+                  <li>Deal timeline and milestone tracking spread across emails and spreadsheets</li>
+                  <li>IC memo drafting from scratch — the most time-consuming single deliverable</li>
+                </ul>
+              </div>
+            </div>
+            <div class="cs-overview__block">
+              <div class="cs-overview__block-label">Primary Persona</div>
+              <div class="cs-overview__block-title">Junior IB Analyst (Year 1–3)</div>
+              <div class="cs-overview__block-body">
+                <ul>
+                  <li>High domain knowledge, severely limited time across multiple live deals</li>
+                  <li>Responsible for the analytical backbone of all deal materials</li>
+                  <li>Constrained by manual process overhead on every deliverable</li>
+                  <li>No dedicated tool — relies on Word, Excel, email threads, and memory</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-featured-screenshot animate-in" style="margin-top: 32px;">
+            <div class="cs-featured-screenshot__img-wrap">
+              <img src="../documents/ai-deal-room/screenshots/Screenshot 2026-05-13 at 5.42.52 PM.png"
+                   alt="Project Everest deal view — Deal Thesis, Financial Summary, and Risk Flags"
+                   loading="lazy">
+            </div>
+            <p class="cs-featured-screenshot__caption">
+              <strong>Deal Intelligence View — Project Everest</strong> Every deal gets a structured intelligence page: deal thesis, financial snapshot, and AI-flagged risk signals. The Risk Flags panel highlights the issues that matter most — FDA inspection outcomes, key-man risk, competitor moves — so analysts aren't buried in documents to find them.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 Core Features ───────────────────────────────────── -->
+      <section id="core-features" class="cs-section">
+        <div class="container">
+          <span class="cs-section-num">03</span>
+          <span class="cs-section__label">Core Features</span>
+          <h2 class="cs-section__title">Smart Deal Setup &amp; AI Company Snapshot</h2>
+          <p class="cs-section__body">The first two modules handle the hardest part of deal prep: getting context into the system quickly. Upload once, and the AI extracts structured intelligence — deal thesis, financials, risk signals — so the analyst starts informed, not from a blank page.</p>
+        </div>
+        <div class="cs-section-cards mt-8">
+          <div class="cs-overview">
+            <div class="cs-overview__block">
+              <div class="cs-overview__block-label">Module 1</div>
+              <div class="cs-overview__block-title">Smart Deal Setup</div>
+              <div class="cs-overview__block-body">
+                <ul>
+                  <li>Structured form captures deal codename, type, estimated value, and sector</li>
+                  <li>Document upload (CIM, teaser, financials) triggers AI extraction pipeline</li>
+                  <li>AI populates deal context, key metrics, and initial risk flags automatically</li>
+                  <li>Deal is instantly available to the full team — no manual briefing required</li>
+                </ul>
+              </div>
+            </div>
+            <div class="cs-overview__block">
+              <div class="cs-overview__block-label">Module 2</div>
+              <div class="cs-overview__block-title">AI Company Snapshot</div>
+              <div class="cs-overview__block-body">
+                <ul>
+                  <li>LLM-generated company brief with confidence scoring on each insight</li>
+                  <li>Key financials (Revenue, EBITDA, CAGR, Deal Size) extracted and formatted</li>
+                  <li>Watch-outs flagged automatically — environmental notices, concentration risks, timeline risks</li>
+                  <li>Stage Readiness panel shows outstanding checklist items before advancing the deal</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-top: 32px;">
+            <div class="cs-featured-screenshot animate-in" style="flex: 1; min-width: 280px; margin-top: 0;">
+              <div class="cs-featured-screenshot__img-wrap">
+                <img src="../documents/ai-deal-room/screenshots/Screenshot 2026-05-13 at 5.39.54 PM.png"
+                     alt="New Deal Setup form — deal details, company info, document upload"
+                     loading="lazy">
+              </div>
+              <p class="cs-featured-screenshot__caption">
+                <strong>New Deal Setup</strong> Three-step form: deal details → company information → document upload. AI begins extraction as soon as documents are uploaded.
+              </p>
+            </div>
+            <div class="cs-featured-screenshot animate-in" style="flex: 1; min-width: 280px; margin-top: 0;">
+              <div class="cs-featured-screenshot__img-wrap">
+                <img src="../documents/ai-deal-room/screenshots/Screenshot 2026-05-13 at 5.40.22 PM.png"
+                     alt="Project Falcon AI Company Snapshot — confidence scores, financial metrics, watch-outs"
+                     loading="lazy">
+              </div>
+              <p class="cs-featured-screenshot__caption">
+                <strong>AI Company Snapshot</strong> Generated from the uploaded CIM. Confidence scores on each insight tell the analyst where to verify. Watch-outs surface issues the document buries.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 Meeting Intelligence ─────────────────────────────── -->
+      <section id="meeting-intelligence" class="cs-section cs-section--alt">
+        <div class="container">
+          <span class="cs-section-num">04</span>
+          <span class="cs-section__label">Meeting Intelligence</span>
+          <h2 class="cs-section__title">Pre-Meeting Prep &amp; Post-Meeting Intelligence</h2>
+          <p class="cs-section__body">Two modules bracket every client interaction. Before the meeting: a structured AI-generated prep sheet so the analyst walks in fully briefed. After the meeting: paste the transcript and get structured intelligence — decisions, commitments, concerns, open questions — that the whole deal team can act on.</p>
+        </div>
+        <div class="cs-section-cards mt-8">
+          <div class="cs-overview">
+            <div class="cs-overview__block">
+              <div class="cs-overview__block-label">Module 3</div>
+              <div class="cs-overview__block-title">AI-Generated Prep Sheets</div>
+              <div class="cs-overview__block-body">
+                <ul>
+                  <li>Auto-generated before every client meeting from accumulated deal signals</li>
+                  <li>Deal context section: seller objectives, sensitivities, watch-outs, comparable transactions</li>
+                  <li>Confidence scoring on each section — high/medium/low with source attribution</li>
+                  <li>Regenerate any section instantly as new information arrives</li>
+                  <li>Exportable to PDF for print or sharing with senior bankers</li>
+                </ul>
+              </div>
+            </div>
+            <div class="cs-overview__block">
+              <div class="cs-overview__block-label">Module 4</div>
+              <div class="cs-overview__block-title">Meeting Room Intelligence</div>
+              <div class="cs-overview__block-body">
+                <ul>
+                  <li>Paste transcript → AI extracts Summary, Key Decisions, Client Concerns, Commitments, Open Questions</li>
+                  <li>Tabbed interface: analysts drill into the specific type of intelligence they need</li>
+                  <li>One-click action: "Generate Action Items" turns commitments into tracked tasks</li>
+                  <li>Multiple transcripts per deal — all analysis saved and accessible in context</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-top: 32px;">
+            <div class="cs-featured-screenshot animate-in" style="flex: 1; min-width: 280px; margin-top: 0;">
+              <div class="cs-featured-screenshot__img-wrap">
+                <img src="../documents/ai-deal-room/screenshots/Screenshot 2026-05-13 at 5.40.52 PM.png"
+                     alt="Pre-Meeting Prep Sheet — AI Generated with deal context, sensitivities, comparable transactions"
+                     loading="lazy">
+              </div>
+              <p class="cs-featured-screenshot__caption">
+                <strong>Pre-Meeting Prep Sheet</strong> AI-assembled from deal metadata and uploaded documents. Deal context, seller sensitivities, and comparable transactions — all sourced and confidence-scored.
+              </p>
+            </div>
+            <div class="cs-featured-screenshot animate-in" style="flex: 1; min-width: 280px; margin-top: 0;">
+              <div class="cs-featured-screenshot__img-wrap">
+                <img src="../documents/ai-deal-room/screenshots/Screenshot 2026-05-13 at 5.41.23 PM.png"
+                     alt="Meeting Room — transcript analysis with summary, key decisions, client concerns tabs"
+                     loading="lazy">
+              </div>
+              <p class="cs-featured-screenshot__caption">
+                <strong>Meeting Room</strong> Transcript analysed into structured tabs. The mandate discussion summary captures verbal agreements, timeline commitments, and fee structure — ready for the team in seconds.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 Workflow Automation ──────────────────────────────── -->
+      <section id="workflow-automation" class="cs-section">
+        <div class="container">
+          <span class="cs-section-num">05</span>
+          <span class="cs-section__label">Workflow Automation</span>
+          <h2 class="cs-section__title">Action Item Tracker</h2>
+          <p class="cs-section__body">Nothing falls through the cracks. Action items are auto-extracted from meeting outputs, assigned to team members, prioritised, and deadline-tracked — so deal teams don't need a separate project management tool for a live transaction.</p>
+        </div>
+        <div class="cs-section-cards mt-8">
+          <div class="cs-overview">
+            <div class="cs-overview__block">
+              <div class="cs-overview__block-label">Module 5</div>
+              <div class="cs-overview__block-title">Auto-Populated Action Items</div>
+              <div class="cs-overview__block-body">
+                <ul>
+                  <li>Action items extracted directly from meeting transcript analysis — zero manual entry</li>
+                  <li>Auto-assigned to deal team members based on role and context</li>
+                  <li>Priority flagging (High/Medium/Low) and due date set from meeting commitments</li>
+                  <li>Status tracking: Open → In Progress → Done, with overdue alerts</li>
+                  <li>Source attribution: every action links back to the meeting that generated it</li>
+                </ul>
+              </div>
+            </div>
+            <div class="cs-overview__block">
+              <div class="cs-overview__block-label">Design Decision</div>
+              <div class="cs-overview__block-title">No Manual Entry Required</div>
+              <div class="cs-overview__block-body">
+                <ul>
+                  <li>The tracker is a by-product of meeting intelligence — not a separate workflow</li>
+                  <li>Analysts never have to context-switch to a project management tool mid-deal</li>
+                  <li>Filter by status, assignee, priority, or source meeting</li>
+                  <li>Designed for deal velocity: fast to scan, fast to update, zero overhead</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-featured-screenshot animate-in" style="margin-top: 32px;">
+            <div class="cs-featured-screenshot__img-wrap">
+              <img src="../documents/ai-deal-room/screenshots/Screenshot 2026-05-13 at 5.41.35 PM.png"
+                   alt="Action Items — auto-populated from meeting, prioritised list with owner assignment"
+                   loading="lazy">
+            </div>
+            <p class="cs-featured-screenshot__caption">
+              <strong>Action Items — Project Falcon</strong> Eight items auto-extracted from the mandate discussion. High-priority tasks like obtaining audited financials and reviewing the Westbridge shareholders agreement are flagged immediately, with owners, due dates, and source attribution visible at a glance.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 IC Memo Drafter ──────────────────────────────────── -->
+      <section id="ic-memo" class="cs-section cs-section--alt">
+        <div class="container">
+          <span class="cs-section-num">06</span>
+          <span class="cs-section__label">IC Memo Drafter</span>
+          <h2 class="cs-section__title">AI-Assembled Investment Committee Memo</h2>
+          <p class="cs-section__body">The IC memo is the single most time-consuming analyst deliverable in any M&amp;A process. The AI Deal Room assembles a near-complete first draft section by section — sourced from all uploaded documents and meeting summaries — so the analyst edits and refines rather than drafting from scratch.</p>
+        </div>
+        <div class="cs-section-cards mt-8">
+          <div class="cs-overview">
+            <div class="cs-overview__block">
+              <div class="cs-overview__block-label">How It Works</div>
+              <div class="cs-overview__block-title">Source-Attributed Draft, Section by Section</div>
+              <div class="cs-overview__block-body">
+                <ul>
+                  <li>Each section (Executive Summary, Company Overview, Financial Analysis, Risk Assessment) generated independently with source citations</li>
+                  <li>Confidence scoring per section — analysts know where to verify before senior review</li>
+                  <li>Inline comments and annotations: analysts add context without altering the AI draft</li>
+                  <li>Regenerate any section as new information is added to the deal</li>
+                  <li>Watermarked as AI-generated — full transparency on every page</li>
+                </ul>
+              </div>
+            </div>
+            <div class="cs-overview__block">
+              <div class="cs-overview__block-label">Design Principle</div>
+              <div class="cs-overview__block-title">AI Drafts. Banker Decides.</div>
+              <div class="cs-overview__block-body">
+                <ul>
+                  <li>No section is submitted without human review — workflow enforces this</li>
+                  <li>"Submit for IC Review" button requires acknowledgment that all sections have been verified</li>
+                  <li>Low-confidence sections flagged for mandatory senior review before submission</li>
+                  <li>Export to DOCX for seamless handoff into existing bank document workflows</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-top: 32px;">
+            <div class="cs-featured-screenshot animate-in" style="flex: 1; min-width: 280px; margin-top: 0;">
+              <div class="cs-featured-screenshot__img-wrap">
+                <img src="../documents/ai-deal-room/screenshots/Screenshot 2026-05-13 at 5.41.56 PM.png"
+                     alt="IC Memo Drafter — Executive Summary section, AI draft pending senior review"
+                     loading="lazy">
+              </div>
+              <p class="cs-featured-screenshot__caption">
+                <strong>IC Memo — Executive Summary</strong> AI-generated from deal metadata and meeting summaries. Source attribution shown per paragraph. Draft clearly watermarked — human review required before submission.
+              </p>
+            </div>
+            <div class="cs-featured-screenshot animate-in" style="flex: 1; min-width: 280px; margin-top: 0;">
+              <div class="cs-featured-screenshot__img-wrap">
+                <img src="../documents/ai-deal-room/screenshots/Screenshot 2026-05-13 at 5.42.10 PM.png"
+                     alt="IC Memo — IC Recommendations section with conditions precedent and next steps"
+                     loading="lazy">
+              </div>
+              <p class="cs-featured-screenshot__caption">
+                <strong>IC Memo — Recommendations</strong> Structured IC recommendation with deal thesis, conditions precedent, and next steps. Ready for senior banker review and submission to the Investment Committee.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 07 Conclusion ───────────────────────────────────────── -->
+      <section id="conclusion" class="cs-section">
+        <div class="container">
+          <span class="cs-section-num">07</span>
+          <span class="cs-section__label">Conclusion</span>
+          <h2 class="cs-section__title">What This Demonstrates</h2>
           <p class="cs-section__body">
-            In investment banking, junior analysts spend a disproportionate share of their time on low-leverage preparation tasks: pulling comparable transaction data, assembling pitch deck sections, summarising target company profiles, formatting financial models. This is work that requires attention to detail and domain knowledge — but not senior judgment.
+            The AI Deal Room is a proof that the assembly layer of investment banking — the part that consumes junior analyst hours without requiring senior judgment — can be automated without removing human accountability from the process.
           </p>
-          <p class="cs-section__body mt-4">
-            The result: senior bankers are bottlenecked on review, junior analysts are burned out on repetitive assembly, and deal teams move slower than they should at the most time-sensitive moments of a transaction.
+          <p class="cs-section__body mt-6">
+            Every design decision enforces the same principle: AI does the first draft, the banker owns the final. Confidence scoring, source attribution, mandatory review gates, and AI watermarking are not compliance features — they are the trust architecture that makes the tool usable in a regulated, high-stakes environment.
           </p>
-          <p class="cs-section__body mt-4">
-            The AI Deal Room targets this gap — not replacing judgment, but automating the assembly layer so analysts can focus on insight.
+          <p class="cs-section__body mt-6">
+            Built in under a week using Claude Code, the prototype covers the complete deal lifecycle across five modules. It demonstrates not just a product concept, but a repeatable approach to AI-first tooling in professional services: start with the workflow, identify the assembly bottleneck, automate the draft, preserve the judgment.
           </p>
         </div>
-
-        <div style="display: flex; flex-direction: column; gap: 16px;">
-          <div class="card" style="padding: 20px 24px;">
-            <div style="font-size: 0.72rem; color: var(--color-accent-gold); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px;">Pain Points Targeted</div>
-            <ul class="cs-list">
-              <li>Manual comparable transaction research (3–5 hrs per deal)</li>
-              <li>Target company profile assembly from disparate sources</li>
-              <li>Pitch deck section drafting and reformatting</li>
-              <li>Deal timeline and milestone tracking across teams</li>
-              <li>Document version management in live deal rooms</li>
-            </ul>
+        <div class="cs-section-cards mt-8">
+          <div class="cs-featured-screenshot animate-in">
+            <div class="cs-featured-screenshot__img-wrap">
+              <img src="../documents/ai-deal-room/screenshots/Screenshot 2026-05-13 at 5.43.24 PM.png"
+                   alt="Project Indigo — Deal Workflow overview showing all four modules across the deal lifecycle"
+                   loading="lazy">
+            </div>
+            <p class="cs-featured-screenshot__caption">
+              <strong>Deal Workflow — Project Indigo</strong> All four workflow modules visible in a single view: Pre-Meeting Briefing (done), Meeting Room (3 meetings logged), Action Items (1 open), IC Memo (v3 final). The deal activity feed and team roster complete the picture — a full deal room in one screen.
+            </p>
           </div>
-          <div class="card" style="padding: 20px 24px; border-color: rgba(201,168,76,0.3);">
-            <div style="font-size: 0.72rem; color: var(--color-accent-gold); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px;">Primary Persona</div>
-            <div style="font-weight: 700; color: var(--color-text-primary); margin-bottom: 6px;">Junior IB Analyst (Year 1–3)</div>
-            <div style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6;">High domain knowledge, limited time. Responsible for the analytical backbone of deal materials but constrained by manual process overhead.</div>
+
+          <div style="margin-top: 40px;">
+            <div class="pdf-download-block animate-in" style="border-color: rgba(201,168,76,0.4);">
+              <div class="pdf-download-block__icon">🚀</div>
+              <div class="pdf-download-block__text">
+                <div class="pdf-download-block__title">AI Deal Room Assistant — Live Prototype</div>
+                <div class="pdf-download-block__desc">Fully navigable across all five modules. Smart Deal Setup · AI Company Snapshot · Pre-Meeting Prep Sheets · Meeting Intelligence · IC Memo Drafter.</div>
+              </div>
+              <a href="https://brijeshbolar-ai-dealroom-assistant.netlify.app/login"
+                 target="_blank" rel="noopener noreferrer"
+                 class="btn btn-gold">Launch Demo ↗</a>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- ── Solution ──────────────────────────────────────────── -->
-  <section class="cs-section cs-section--alt">
-    <div class="container">
-      <span class="cs-section__label">Solution</span>
-      <h2 class="cs-section__title">What the AI Deal Room Does</h2>
-
-      <div class="grid-3">
-        <div class="card card-insight animate-in">
-          <div class="card-insight__icon">⚡</div>
-          <div class="card-insight__title">Smart Deal Setup</div>
-          <div class="card-insight__body">Upload documents once. AI extracts deal thesis, key metrics, and risks — turning a 200-page CIM into a structured briefing in seconds, not hours.</div>
-        </div>
-        <div class="card card-insight animate-in">
-          <div class="card-insight__icon">📋</div>
-          <div class="card-insight__title">AI-Generated Prep Sheets</div>
-          <div class="card-insight__body">Structured briefing documents auto-generated before every client meeting — deal context, open issues, and talking points assembled without any manual effort.</div>
-        </div>
-        <div class="card card-insight animate-in">
-          <div class="card-insight__icon">🎙️</div>
-          <div class="card-insight__title">Meeting Intelligence</div>
-          <div class="card-insight__body">Paste a transcript, get summaries, sentiment signals, and red flags instantly. Converts raw meeting notes into structured intelligence the whole deal team can act on.</div>
-        </div>
-        <div class="card card-insight animate-in">
-          <div class="card-insight__icon">✅</div>
-          <div class="card-insight__title">Action Item Tracker</div>
-          <div class="card-insight__body">Auto-assigned, prioritised, and deadline-tracked action items extracted from meeting outputs — so nothing falls through the cracks between client touchpoints.</div>
-        </div>
-        <div class="card card-insight animate-in">
-          <div class="card-insight__icon">🏦</div>
-          <div class="card-insight__title">IC Memo Drafter</div>
-          <div class="card-insight__body">A near-complete Investment Committee memo assembled section by section from all deal signals — the analyst refines and signs off, the AI handles the first draft.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Prototype link ─────────────────────────────────────── -->
-  <section class="cs-section">
-    <div class="container">
-      <span class="cs-section__label">Working Prototype</span>
-      <h2 class="cs-section__title">Try the Live Demo</h2>
-      <p class="cs-section__body mb-8">Built around a fictional Mumbai-based boutique bank with dummy data — fully navigable and clickthrough. The design principle: AI does the first draft. The banker owns the final.</p>
-
-      <div class="pdf-download-block animate-in" style="border-color: rgba(201,168,76,0.4);">
-        <div class="pdf-download-block__icon">🚀</div>
-        <div class="pdf-download-block__text">
-          <div class="pdf-download-block__title">AI Deal Room Assistant — Live Prototype</div>
-          <div class="pdf-download-block__desc">Clickthrough prototype built in under a week using Claude Code. Smart Deal Setup · AI Prep Sheets · Meeting Intelligence · IC Memo Drafter.</div>
-        </div>
-        <a href="https://brijeshbolar-ai-dealroom-assistant.netlify.app/login"
-           target="_blank" rel="noopener noreferrer"
-           class="btn btn-gold">Launch Demo ↗</a>
-      </div>
-    </div>
-  </section>
+    </main><!-- /.cs-main-content -->
+  </div><!-- /.cs-with-sidebar -->
 
   <!-- ── Footer ────────────────────────────────────────────── -->
   <footer class="site-footer">
@@ -179,5 +524,86 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script>
+    /* ── AI Deal Room Sidebar Scrollspy & Mobile TOC ─────────────
+       Fully isolated from main.js. Zero shared state.
+    ──────────────────────────────────────────────────────────── */
+    (function () {
+      'use strict';
+
+      /* 1. Mobile TOC toggle */
+      var mobileToc = document.getElementById('cs-mobile-toc');
+      var mobileTocToggle = document.getElementById('cs-mobile-toc-toggle');
+      if (mobileToc && mobileTocToggle) {
+        mobileTocToggle.addEventListener('click', function () {
+          var isOpen = mobileToc.classList.toggle('open');
+          mobileTocToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+        mobileToc.querySelectorAll('.cs-mobile-toc__link').forEach(function (link) {
+          link.addEventListener('click', function () {
+            mobileToc.classList.remove('open');
+            mobileTocToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      /* 2. Scrollspy via IntersectionObserver */
+      var sidebarLinks = Array.from(
+        document.querySelectorAll('.cs-sidebar__link[href^="#"]')
+      );
+      if (!sidebarLinks.length) return;
+
+      var sections = Array.from(
+        document.querySelectorAll('main.cs-main-content section[id]')
+      );
+      if (!sections.length) return;
+
+      var visibleSections = new Set();
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          var id = entry.target.getAttribute('id');
+          if (entry.isIntersecting) {
+            visibleSections.add(id);
+          } else {
+            visibleSections.delete(id);
+          }
+        });
+
+        /* Activate the topmost visible section (DOM order wins) */
+        var activeId = null;
+        sections.forEach(function (section) {
+          if (activeId === null && visibleSections.has(section.getAttribute('id'))) {
+            activeId = section.getAttribute('id');
+          }
+        });
+
+        sidebarLinks.forEach(function (link) {
+          var id = link.getAttribute('href').slice(1);
+          link.classList.toggle('active', id === activeId);
+        });
+      }, {
+        rootMargin: '-15% 0px -70% 0px',
+        threshold: 0
+      });
+
+      sections.forEach(function (section) { observer.observe(section); });
+
+      /* 3. Smooth scroll with nav offset for sidebar links */
+      var nav = document.getElementById('site-nav');
+      sidebarLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          var targetId = link.getAttribute('href').slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+          e.preventDefault();
+          var navHeight = nav ? nav.offsetHeight : 72;
+          var top = target.getBoundingClientRect().top + window.scrollY - navHeight - 16;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        });
+      });
+
+    }());
+  </script>
 </body>
 </html>

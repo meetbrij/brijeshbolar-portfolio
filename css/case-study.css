@@ -636,12 +636,20 @@
   min-width: 0;
 }
 
-/* Remove container padding inside main content — cs-with-sidebar handles centering */
+/* On mobile the .container inside .cs-main-content keeps its default padding
+   so text never touches the screen edge. On desktop .cs-with-sidebar handles
+   the outer padding so the inner container resets to zero. */
 .cs-main-content .cs-section .container,
 .cs-main-content .cs-section--alt .container {
-  padding-left: 0;
-  padding-right: 0;
   max-width: none;
+}
+
+@media (min-width: 1024px) {
+  .cs-main-content .cs-section .container,
+  .cs-main-content .cs-section--alt .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 /* ── Mobile jump-to dropdown ──────────────────────────────── */
@@ -843,28 +851,83 @@
   line-height: 1.55;
 }
 
-/* ── Featured screenshot ──────────────────────────────────── */
+/* ── Featured screenshot — side-by-side layout ────────────── */
 .cs-featured-screenshot {
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--color-border-subtle);
   background: var(--color-bg-secondary);
 }
 
-.cs-featured-screenshot img {
+@media (min-width: 640px) {
+  .cs-featured-screenshot {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+/* Image sits on the left, constrained so it fits in one viewport height */
+.cs-featured-screenshot__img-wrap {
+  flex-shrink: 0;
+  background: #0d1a2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@media (max-width: 639px) {
+  .cs-featured-screenshot__img-wrap {
+    max-height: 240px;
+  }
+}
+
+@media (min-width: 640px) {
+  .cs-featured-screenshot__img-wrap {
+    width: 55%;
+    max-height: 380px;
+  }
+}
+
+.cs-featured-screenshot__img-wrap img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
   display: block;
 }
 
+/* Caption/text panel on the right */
 .cs-featured-screenshot__caption {
-  padding: 12px 20px;
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px 28px;
   border-top: 1px solid var(--color-border-subtle);
-  line-height: 1.5;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
   margin: 0;
+}
+
+@media (min-width: 640px) {
+  .cs-featured-screenshot__caption {
+    border-top: none;
+    border-left: 1px solid var(--color-border-subtle);
+  }
+}
+
+.cs-featured-screenshot__caption strong {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
 }
 
 /* ── Conclusion CTA row ───────────────────────────────────── */
